@@ -1,6 +1,6 @@
 {
-  "name": "wechat-sidecar-launcher",
-  "version": "1.0.0",
+  "name": "sidecar-launcher",
+  "version": "0.1.0",
   "description": "",
   "main": "main.js",
   "scripts": {
