@@ -3,3 +3,4 @@ node_modules/
 
 /dist/*
 /package-lock.json
+sidecar-launcher-win32-x64/*
