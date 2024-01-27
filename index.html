@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>微信机器人启动器</title>
+<style>
+  body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  #result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    min-height: 50px;
+  }
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+<h1>微信机器人一键启动器</h1>
+<button id="startButton">启动Sidecar<br><br>3.9.8.25</button>
+<button id="stopButton">停止Sidecar<br><br>3.9.8.25</button>
+<br>
+<button id="startButtonFuntool">启动Funtool<br><br>3.9.2.23</button>
+<button id="stopButtonFuntool">停止Funtool<br><br>3.9.2.23</button>
+<div id="result" style="margin: 50px 100px;"></div>
+
+<script>
+  const { ipcRenderer } = require('electron');
+
+  document.getElementById('startButton').addEventListener('click', () => {
+    ipcRenderer.send('start-sidecar');
+  });
+
+  document.getElementById('stopButton').addEventListener('click', () => {
+    ipcRenderer.send('stop-sidecar');
+  });
+
+  document.getElementById('startButtonFuntool').addEventListener('click', () => {
+    ipcRenderer.send('start-funtool');
+  });
+
+  document.getElementById('stopButtonFuntool').addEventListener('click', () => {
+    ipcRenderer.send('stop-funtool');
+  });
+
+  ipcRenderer.on('action-result', (event, result) => {
+    const resultDiv = document.getElementById('result');
+    resultDiv.textContent = result; // 显示执行结果
+  });
+
+  ipcRenderer.on('wechat-check-result', (event, result) => {
+    const resultDiv = document.getElementById('result');
+    resultDiv.textContent = result; // 显示 WeChat 检查结果
+  });
+  
+</script>
+</body>
+</html>
