@@ -1,0 +1,141 @@
+{
+  "1": {
+    "content": "ok",
+    "id": "20240128235859",
+    "id1": "",
+    "id2": "",
+    "id3": "",
+    "other": "<msgsource>\n\t<alnode>\n\t\t<fr>1</fr>\n\t</alnode>\n\t<pua>1</pua>\n\t<signature>V1_QW5slcHa|v1_Ae8DdPTN</signature>\n\t<tmp_node>\n\t\t<publisher-id></publisher-id>\n\t</tmp_node>\n</msgsource>\n",
+    "srvid": 1,
+    "time": "2024-01-28 23:58:59",
+    "type": 1,
+    "wxid": "tyutluyc"
+  },
+  "3": {
+    "content": {
+      "content": "<?xml version=\"1.0\"?>\n<msg>\n\t<img aeskey=\"7076706b6766716d796f68697661656c\" encryver=\"1\" cdnthumbaeskey=\"7076706b6766716d796f68697661656c\" cdnthumburl=\"3052020100044b30490201000204541f47e202033d14b9020454f2740e020465b65832042464663761623862352d386164642d346666332d396366382d3839316534376636343732310204012828010201000400\" cdnthumblength=\"7040\" cdnthumbheight=\"100\" cdnthumbwidth=\"100\" cdnmidheight=\"0\" cdnmidwidth=\"0\" cdnhdheight=\"0\" cdnhdwidth=\"0\" cdnmidimgurl=\"3052020100044b30490201000204541f47e202033d14b9020454f2740e020465b65832042464663761623862352d386164642d346666332d396366382d3839316534376636343732310204012828010201000400\" length=\"104015\" cdnbigimgurl=\"3052020100044b30490201000204541f47e202033d14b9020454f2740e020465b65832042464663761623862352d386164642d346666332d396366382d3839316534376636343732310204012828010201000400\" hdlength=\"5451118\" md5=\"067459e629a9cc06641881b95b240822\" />\n\t<platform_signature></platform_signature>\n\t<imgdatahash></imgdatahash>\n\t<ImgSourceInfo>\n\t\t<ImgSourceUrl></ImgSourceUrl>\n\t\t<BizType>0</BizType>\n\t</ImgSourceInfo>\n</msg>\n",
+      "detail": "wxid_0o1t51l3f57221\\FileStorage\\MsgAttach\\22345360df09c59f1e7d69cdac380eb4\\Image\\2024-01\\71035c182298d949890a38e0b79ac4e2.dat",
+      "id1": "50068856275@chatroom",
+      "id2": "wxid_shas9rca5jju22",
+      "thumb": "wxid_0o1t51l3f57221\\FileStorage\\MsgAttach\\22345360df09c59f1e7d69cdac380eb4\\Thumb\\2024-01\\28667f22a80ebd9afb49d5e00047c225_t.dat"
+    },
+    "id": "20240128213548",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-28 21:35:48",
+    "type": 3
+  },
+  "4": {
+    "content": "websocket:please reference client-3.2.1.121.js",
+    "id": "20240128235808",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "FAILED",
+    "time": "2024-01-28 23:58:08",
+    "type": 4
+  },
+  "5": {
+    "content": "hello guys",
+    "id": "20240128235808",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-28 23:58:08",
+    "type": 5
+  },
+  "5005": {
+    "content": "heart beat",
+    "id": "20240128235902",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-28 23:59:02",
+    "type": 5005
+  },
+  "10000": [
+    {
+      "content": {
+        "content": "群收款消息，请在手机上查看",
+        "id1": "22232811504@chatroom"
+      },
+      "id": "20240128222145",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-28 22:21:45",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "群收款消息，请在手机上查看",
+        "id1": "22232811504@chatroom"
+      },
+      "id": "20240128222213",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-28 22:22:13",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "群收款消息，请在手机上查看",
+        "id1": "22232811504@chatroom"
+      },
+      "id": "20240128222231",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-28 22:22:31",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "群收款消息，请在手机上查看",
+        "id1": "44691574243@chatroom"
+      },
+      "id": "20240128222521",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-28 22:25:21",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "群收款消息，请在手机上查看",
+        "id1": "20889085065@chatroom"
+      },
+      "id": "20240128223932",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-28 22:39:32",
+      "type": 10000
+    }
+  ],
+  "49_5": {
+    "content": {
+      "content": "<msg>\n    <appmsg appid=\"\" sdkver=\"0\">\n        <title><![CDATA[烟花商贩的新年冒险]]></title>\n        <des><![CDATA[“雨天要带伞，夜行要带刀，今年更需要烟花。”]]></des>\n        <action></action>\n        <type>5</type>\n        <showtype>1</showtype>\n        <content><![CDATA[]]></content>\n        <contentattr>0</contentattr>\n        <url><![CDATA[http://mp.weixin.qq.com/s?__biz=MzI2NDk5NzA0Mw==&mid=2248474557&idx=1&sn=90884cd53a27d7a21ff83ab662fb16ea&chksm=e8a60cf1f6f58809fe9921bf874515f3b0895e41ef0fecf7e0bc8bef0bf0e506877744978c04&scene=0&xtrack=1#rd]]></url>\n        <lowurl><![CDATA[]]></lowurl>\n        <appattach>\n            <totallen>0</totallen>\n            <attachid></attachid>\n            <fileext></fileext>\n        </appattach>\n        <extinfo></extinfo>\n        <mmreader>\n            <category type=\"20\" count=\"2\">\n                <name><![CDATA[36氪]]></name>\n                <topnew>\n                    <cover><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/QicyPhNHD5vanWPOrbRNR6tIS1zwfK2Y12icUT1dEErsmYDAxicxGuAWwqeiczVm2ULDa3yia6nFN0icy30yQy6zFsJg/640?wxtype=jpeg&wxfrom=0]]></cover>\n                    <width>0</width>\n                    <height>0</height>\n                    <digest><![CDATA[“雨天要带伞，夜行要带刀，今年更需要烟花。”]]></digest>\n                </topnew>\n                \n                <item>\n                    <has_redpacket_cover>0</has_redpacket_cover>\n                    <text_title><![CDATA[]]></text_title>\n                    <itemshowtype>0</itemshowtype>\n                    <title><![CDATA[烟花商贩的新年冒险]]></title>\n                    <url><![CDATA[http://mp.weixin.qq.com/s?__biz=MzI2NDk5NzA0Mw==&mid=2248474557&idx=1&sn=90884cd53a27d7a21ff83ab662fb16ea&chksm=e8221436f07c37fbc1484b3b35722ce71bfcbb4b38947b20f8d72bd19d30969712da96f1ac5e&scene=0&xtrack=1#rd]]></url>\n                    <shorturl><![CDATA[]]></shorturl>\n                    <longurl><![CDATA[]]></longurl>\n                    <pub_time>1706448600</pub_time>\n                    <summary><![CDATA[今年的烟花主打一个炸裂感。1088发的“千里江山图”，名字诗意，一上天就没了节奏和美感，像炮弹。这并不影响它成为网红，跨年前10天就卖爆了，甚至需要预约。零售价三四千，网上叫价1800，马上有人回，“]]></summary>\n                    <cover><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/QicyPhNHD5vanWPOrbRNR6tIS1zwfK2Y12icUT1dEErsmYDAxicxGuAWwqeiczVm2ULDa3yia6nFN0icy30yQy6zFsJg/640?wxtype=jpeg&wxfrom=0]]></cover>\n                    <tweetid></tweetid>\n                    <digest><![CDATA[“雨天要带伞，夜行要带刀，今年更需要烟花。”]]></digest>\n                    <fileid>100990063</fileid>\n                    <sources>\n                        <source>\n                            <name><![CDATA[36氪]]></name>\n                        </source>\n                    </sources>\n                    <styles></styles>\n                    <native_url></native_url>\n                    <del_flag>0</del_flag>\n                    <contentattr>0</contentattr>\n                    <play_length>0</play_length>\n                    <play_url><![CDATA[]]></play_url>\n                    <voice_id><![CDATA[]]></voice_id>\n                    <tid><![CDATA[]]></tid>\n                    <nonce_id><![CDATA[]]></nonce_id>\n                    <voice_type>0</voice_type>\n<player><![CDATA[]]></player>\n                     \n                    \n                    <music_source>0</music_source>\n                    <pic_num>0</pic_num>\n                    <vid></vid>\n                    <author><![CDATA[]]></author>\n                    <recommendation><![CDATA[]]></recommendation>\n                    <pic_urls></pic_urls>\n                    <multi_picture_cover></multi_picture_cover>\n                    <comment_topic_id>3302664291833380865</comment_topic_id>\n                    <cover_235_1><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/QicyPhNHD5vanWPOrbRNR6tIS1zwfK2Y12icUT1dEErsmYDAxicxGuAWwqeiczVm2ULDa3yia6nFN0icy30yQy6zFsJg/640?wxtype=jpeg&wxfrom=0]]></cover_235_1>\n                    <cover_1_1><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/QicyPhNHD5vanWPOrbRNR6tIS1zwfK2Y1IKrIjWy3UR61Ak6OVIHhHHlkTXOpOUexs7WFOW5ibgL8LcdkicO2feBQ/300?wxtype=jpeg&wxfrom=0]]></cover_1_1>\n                    <cover_16_9><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/QicyPhNHD5vanWPOrbRNR6tIS1zwfK2Y12icUT1dEErsmYDAxicxGuAWwqeiczVm2ULDa3yia6nFN0icy30yQy6zFsJg/640?wxtype=jpeg&wxfrom=0]]></cover_16_9>\n                    <appmsg_like_type>2</appmsg_like_type>\n                    <video_width>0</video_width>\n                    <video_height>0</video_height>\n                    <is_pay_subscribe>0</is_pay_subscribe>\n\t\t\t<finder_feed>\n\t\t\t    <object_id><![CDATA[]]></object_id>\n\t\t\t    <object_nonce_id><![CDATA[]]></object_nonce_id>\n\t\t\t    <feed_type>0</feed_type>\n\t\t\t    <nickname><![CDATA[]]></nickname>\n\t\t\t    <avatar><![CDATA[]]></avatar>\n\t\t\t    <desc><![CDATA[]]></desc>\n\t\t\t    <media_count>0</media_count>\n\t\t\t    <media_list>\n\t\t\t\t\n\t\t\t    </media_list>\n\t\t\t    <mega_video>\n\t\t\t\t<object_id><![CDATA[]]></object_id>\n\t\t\t\t<object_nonce_id><![CDATA[]]></object_nonce_id>\n\t\t\t    </mega_video>\n\t\t\t</finder_feed>\n                        <finder_live>\n                            <finder_username><![CDATA[]]></finder_username>\n                            <category><![CDATA[]]></category>\n                            <finder_nonce_id><![CDATA[]]></finder_nonce_id>\n                            <export_id><![CDATA[]]></export_id>\n                            <nickname><![CDATA[]]></nickname>\n                            <head_url><![CDATA[]]></head_url>\n                            <desc><![CDATA[]]></desc>\n                            <live_status></live_status>\n                            <live_source_type_str><![CDATA[]]></live_source_type_str>\n                            <ext_flag></ext_flag>\n                            <auth_icon_url><![CDATA[]]></auth_icon_url>\n                            <auth_icon_type_str><![CDATA[]]></auth_icon_type_str>\n                            <media>\n                                <cover_url><![CDATA[]]></cover_url>\n                                <height></height>\n                                <width></width>\n                            </media>\n                        </finder_live>\n                </item>\n                \n                <item>\n                    <has_redpacket_cover>0</has_redpacket_cover>\n                    <text_title><![CDATA[]]></text_title>\n                    <itemshowtype>0</itemshowtype>\n                    <title><![CDATA[​传Temu将于3月在美国上线半托管业务 / 消息称东方甄选出海将与TikTok合作｜36氪出海·要闻回顾]]></title>\n                    <url><![CDATA[http://mp.weixin.qq.com/s?__biz=MzI2NDk5NzA0Mw==&mid=2248474557&idx=2&sn=c26d06a4dc1da8e0db4cbad1f7f4c445&chksm=e859668c432103748961e194afc31a9228a8bfac49ec63977f055fa95f0a6ae1ea0b2bdfa47e&scene=0&xtrack=1#rd]]></url>\n                    <shorturl><![CDATA[]]></shorturl>\n                    <longurl><![CDATA[]]></longurl>\n                    <pub_time>1706448600</pub_time>\n                    <summary><![CDATA[传Temu将于3月在美国上线半托管业务消息称东方甄选出海将与TikTok合作速卖通、亚马逊成西班牙访问量最大电商平台隆基绿能：2024年预计全球光伏装机同比增加约20%特斯拉2023年四季度净利润降近]]></summary>\n                    <cover><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/hv4fmHwORZlZGKzeBtcExoPbmLfOibUt91JumRvJywgk8VJ9o5PkIM0CHqdZnIBQ8dehWHYEeEG74wfVVAWbWhg/300?wxtype=jpeg&wxfrom=0]]></cover>\n                    <tweetid></tweetid>\n                    <digest><![CDATA[· 速卖通、亚马逊成西班牙访问量最大电商平台\r\n· 隆基绿能：今年预计全球光伏装机增加20%\r\n· 特斯拉2023年四季度净利润降近四成]]></digest>\n                    <fileid>0</fileid>\n                    <sources>\n                        <source>\n                            <name><![CDATA[36氪]]></name>\n                        </source>\n                    </sources>\n                    <styles></styles>\n                    <native_url></native_url>\n                    <del_flag>0</del_flag>\n                    <contentattr>0</contentattr>\n                    <play_length>0</play_length>\n                    <play_url><![CDATA[]]></play_url>\n                    <voice_id><![CDATA[]]></voice_id>\n                    <tid><![CDATA[]]></tid>\n                    <nonce_id><![CDATA[]]></nonce_id>\n                    <voice_type>0</voice_type>\n<player><![CDATA[]]></player>\n                     \n                    \n                    <music_source>0</music_source>\n                    <pic_num>0</pic_num>\n                    <vid></vid>\n                    <author><![CDATA[]]></author>\n                    <recommendation><![CDATA[]]></recommendation>\n                    <pic_urls></pic_urls>\n                    <multi_picture_cover></multi_picture_cover>\n                    <comment_topic_id>3302664292890345483</comment_topic_id>\n                    <cover_235_1><![CDATA[]]></cover_235_1>\n                    <cover_1_1><![CDATA[]]></cover_1_1>\n                    <cover_16_9><![CDATA[]]></cover_16_9>\n                    <appmsg_like_type>2</appmsg_like_type>\n                    <video_width>0</video_width>\n                    <video_height>0</video_height>\n                    <is_pay_subscribe>0</is_pay_subscribe>\n\t\t\t<finder_feed>\n\t\t\t    <object_id><![CDATA[]]></object_id>\n\t\t\t    <object_nonce_id><![CDATA[]]></object_nonce_id>\n\t\t\t    <feed_type>0</feed_type>\n\t\t\t    <nickname><![CDATA[]]></nickname>\n\t\t\t    <avatar><![CDATA[]]></avatar>\n\t\t\t    <desc><![CDATA[]]></desc>\n\t\t\t    <media_count>0</media_count>\n\t\t\t    <media_list>\n\t\t\t\t\n\t\t\t    </media_list>\n\t\t\t    <mega_video>\n\t\t\t\t<object_id><![CDATA[]]></object_id>\n\t\t\t\t<object_nonce_id><![CDATA[]]></object_nonce_id>\n\t\t\t    </mega_video>\n\t\t\t</finder_feed>\n                        <finder_live>\n                            <finder_username><![CDATA[]]></finder_username>\n                            <category><![CDATA[]]></category>\n                            <finder_nonce_id><![CDATA[]]></finder_nonce_id>\n                            <export_id><![CDATA[]]></export_id>\n                            <nickname><![CDATA[]]></nickname>\n                            <head_url><![CDATA[]]></head_url>\n                            <desc><![CDATA[]]></desc>\n                            <live_status></live_status>\n                            <live_source_type_str><![CDATA[]]></live_source_type_str>\n                            <ext_flag></ext_flag>\n                            <auth_icon_url><![CDATA[]]></auth_icon_url>\n                            <auth_icon_type_str><![CDATA[]]></auth_icon_type_str>\n                            <media>\n                                <cover_url><![CDATA[]]></cover_url>\n                                <height></height>\n                                <width></width>\n                            </media>\n                        </finder_live>\n                </item>\n                \n            </category>\n            <publisher>\n                <username><![CDATA[gh_240fbf8b33e4]]></username>\n                <nickname><![CDATA[36氪]]></nickname>\n            </publisher>\n            <template_header></template_header>\n            <template_detail></template_detail>\n            <forbid_forward>0</forbid_forward>\n        </mmreader>\n        <thumburl><![CDATA[https://mmbiz.qpic.cn/mmbiz_jpg/QicyPhNHD5vanWPOrbRNR6tIS1zwfK2Y12icUT1dEErsmYDAxicxGuAWwqeiczVm2ULDa3yia6nFN0icy30yQy6zFsJg/640?wxtype=jpeg&wxfrom=0]]></thumburl>\n    </appmsg>\n    <fromusername><![CDATA[gh_240fbf8b33e4]]></fromusername>\n    <appinfo>\n        <version></version>\n        <appname><![CDATA[36氪]]></appname>\n        <isforceupdate>1</isforceupdate>\n    </appinfo>\n    \n    \n    \n    \n    \n    \n</msg>",
+      "id1": "gh_240fbf8b33e4",
+      "id2": ""
+    },
+    "id": "20240128213410",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-28 21:34:10",
+    "type": 49
+  }
+}
