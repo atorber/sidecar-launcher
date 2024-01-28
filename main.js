@@ -22,52 +22,59 @@ function createWindow() {
     mainWindow.loadFile('index.html');
 
     ipcMain.on('start-funtool', () => {
+        const timeutc = new Date().toLocaleString('zh-CN', { hour12: false }).replace(/\//g, '-').replace(/:/g, '-').replace(/ /g, '-');
         if (!funtoolProcess) {
             const execPath = path.join(__dirname, 'assets', 'funtool_wx=3.9.2.23.exe');
             funtoolProcess = spawn(execPath);
             funtoolProcess.on('spawn', () => {
-                mainWindow.webContents.send('action-result', 'funtool已启动！');
+                mainWindow.webContents.send('action-result', timeutc + ':funtool已启动！');
             });
             funtoolProcess.on('error', (err) => {
-                mainWindow.webContents.send('action-result', '启动funtool时发生错误: ' + err);
+                mainWindow.webContents.send('action-result', timeutc + ':启动funtool时发生错误: ' + err);
             });
         } else {
-            mainWindow.webContents.send('action-result', 'funtool已在运行中。');
+            mainWindow.webContents.send('action-result', timeutc + ':funtool已在运行中...');
         }
     });
 
     ipcMain.on('stop-funtool', () => {
+        const timeutc = new Date().toLocaleString('zh-CN', { hour12: false }).replace(/\//g, '-').replace(/:/g, '-').replace(/ /g, '-');
+
         if (funtoolProcess) {
             funtoolProcess.kill();
             funtoolProcess = null;
-            mainWindow.webContents.send('action-result', 'funtool已停止。');
+            mainWindow.webContents.send('action-result', timeutc + ':funtool已停止。');
         } else {
-            mainWindow.webContents.send('action-result', 'funtool未在运行。');
+            mainWindow.webContents.send('action-result', timeutc + ':funtool未在运行...');
         }
     });
 
     ipcMain.on('start-sidecar', () => {
+        const timeutc = new Date().toLocaleString('zh-CN', { hour12: false }).replace(/\//g, '-').replace(/:/g, '-').replace(/ /g, '-');
+
         if (!sidecarProcess) {
-            const execPath = path.join(__dirname, 'assets', 'wxbot-sidecar');
+            const execPath = path.join(__dirname, 'assets','wxbot-sidecar.exe');
             sidecarProcess = spawn(execPath);
             sidecarProcess.on('spawn', () => {
-                mainWindow.webContents.send('action-result', 'Sidecar已启动！');
+                mainWindow.webContents.send('action-result', timeutc + ':Sidecar已启动！');
             });
             sidecarProcess.on('error', (err) => {
-                mainWindow.webContents.send('action-result', '启动Sidecar时发生错误: ' + err);
+                mainWindow.webContents.send('action-result', timeutc + ':启动Sidecar时发生错误: ' + err);
             });
         } else {
-            mainWindow.webContents.send('action-result', 'Sidecar已在运行中。');
+            mainWindow.webContents.send('action-result', timeutc + 'Sidecar已在运行中...');
         }
     });
 
     ipcMain.on('stop-sidecar', () => {
+        const timeutc = new Date().toLocaleString('zh-CN', { hour12: false }).replace(/\//g, '-').replace(/:/g, '-').replace(/ /g, '-');
+
         if (sidecarProcess) {
             sidecarProcess.kill();
             sidecarProcess = null;
-            mainWindow.webContents.send('action-result', 'Sidecar已停止。');
+            mainWindow.webContents.send('action-result', timeutc + ':Sidecar已停止!');
         } else {
-            mainWindow.webContents.send('action-result', 'Sidecar未在运行。');
+            mainWindow.webContents.send('action-result', timeutc + ':Sidecar未在运行...');
         }
     });
 
