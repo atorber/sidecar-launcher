@@ -11,6 +11,8 @@ const { PuppetBridge } = require('wechaty-puppet-bridge')
 let mainWindow;
 let sidecarProcess = null;
 let funtoolProcess = null;
+let botProcess = null;
+
 let result = '程序启动，载入中...';
 
 async function onLogin(user) {
@@ -142,11 +144,46 @@ function createWindow() {
         }
     });
 
-    bot.start()
-    .then(() => {
-        return log.info('StarterBot', 'Starter Bot Started.')
-    })
-    .catch(console.error)
+    ipcMain.on('start-bot', () => {
+        const timeutc = new Date().toLocaleString();
+
+        if (!botProcess) {
+            bot.start()
+            .then(() => {
+                botProcess = true;
+                result = `${timeutc}:Bot已启动！<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+                return log.info('StarterBot', 'Starter Bot Started.')
+            })
+            .catch((err)=>{
+                console.error('bot start error', err)
+                result = `${timeutc}:启动Bot时发生错误...${err}<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+            })
+        } else {
+            result = `${timeutc}:Bot已在运行中...<br>` + result;
+            mainWindow.webContents.send('action-result', result);
+        }
+    });
+
+    ipcMain.on('stop-bot', () => {
+        const timeutc = new Date().toLocaleString();
+        if (botProcess) {
+            bot.stop().then(()=>{
+                botProcess = null;
+                result = `${timeutc}:bot已停止...<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+            }).catch((err)=>{
+                console.error('bot stop error', err)
+                result = `${timeutc}:bot停止时发生错误...${err}<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+            })
+        } else {
+            result = `${timeutc}:Bot未在运行...<br>` + result;
+            mainWindow.webContents.send('action-result', result);
+        }
+    });
+
 }
 
 function checkWeChat() {

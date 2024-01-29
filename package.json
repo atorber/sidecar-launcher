@@ -14,7 +14,7 @@
   "dependencies": {
     "file-box": "^1.5.5",
     "wechaty": "^1.20.2",
-    "wechaty-puppet-bridge": "^0.2.3"
+    "wechaty-puppet-bridge": "^0.2.5"
   },
   "devDependencies": {
     "electron": "^28.2.0",

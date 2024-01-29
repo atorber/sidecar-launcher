@@ -29,10 +29,12 @@
     <h1>微信机器人一键启动器</h1>
     <p style="color: crimson;">仅支持微信客户端v3.9.8.25、3.9.2.23</p>
     <p id="wechat-version" style="color:cadetblue;"></p>
-    <button id="startButtonSidecar">启动Sidecar<br><br>3.9.8.25</button>
-    <button id="stopButtonSidecar">停止Sidecar<br><br>3.9.8.25</button>
-    <button id="startButtonFuntool">启动Funtool<br><br>3.9.2.23</button>
-    <button id="stopButtonFuntool">停止Funtool<br><br>3.9.2.23</button>
+    <button id="startButtonSidecar">启动<br>3.9.8.25</button>
+    <button id="stopButtonSidecar">停止<br>3.9.8.25</button>
+    <button id="startButtonFuntool">启动<br>3.9.2.23</button>
+    <button id="stopButtonFuntool">停止<br>3.9.2.23</button>
+    <button id="startButtonBot">启动Bot<br>wechaty</button>
+    <button id="stopButtonBot">停止Bot<br>wechaty</button>
     <pre style="width: 90%; max-width: 90%; margin: auto; padding: 20px; text-align: left; border-radius: 1%;
     overflow-x: hidden; overflow-y: auto; text-overflow: ellipsis; white-space: pre-wrap;
     border: 1px solid #ccc; height: 18em;
@@ -58,6 +60,14 @@
 
         document.getElementById('stopButtonFuntool').addEventListener('click', () => {
             ipcRenderer.send('stop-funtool');
+        });
+
+        document.getElementById('stopButtonBot').addEventListener('click', () => {
+            ipcRenderer.send('stop-bot');
+        });
+
+        document.getElementById('stopButtonBot').addEventListener('click', () => {
+            ipcRenderer.send('stop-bot');
         });
 
         ipcRenderer.on('action-result', (event, result) => {
