@@ -64,20 +64,26 @@
 <body>
     <div class="sidebar">
         <h2>机器人启动器</h2>
-        <button id="startButtonSidecar">启动<br>3.9.8.25</button>
-        <button id="stopButtonSidecar">停止<br>3.9.8.25</button>
-        <button id="startButtonFuntool">启动<br>3.9.2.23</button>
-        <button id="stopButtonFuntool">停止<br>3.9.2.23</button>
+        <button id="restartButton">重启程序</button>
+        <button id="startButtonSidecar" hidden>启动3.9.8.25</button>
+        <button id="stopButtonSidecar" hidden>停止3.9.8.25</button>
+        <button id="startButtonFuntool">启动funtool</button>
+        <button id="stopButtonFuntool">停止funtool</button>
         <!-- <button id="startButtonBot">启动Bot<br>wechaty</button>
         <button id="stopButtonBot">停止Bot<br>wechaty</button> -->
-        <button id="downloadTemplateButton">下载Excel模板</button>
-        <input type="file" id="fileInput" accept=".xlsx, .xls" />
-        <button id="uploadButton">立即上传</button>
-        <button id="restartButton">重启程序<br>Reboot</button>
+        <!-- <button id="downloadTemplateButton">下载Excel模板</button> -->
+        <button id="exportButton">同步联系人</button>
+        <button id="downloadTemplateButton">下载模板</button>
+        <p>
+            <input type="file" id="fileInput" accept=".xlsx, .xls" />
+        </p>
+        <button id="uploadButton">上传任务</button>
+        <button id="sendButton">立即发送</button>
+
     </div>
     <div class="main-content">
-        <p class="status-indicator">支持客户端：3.9.8.25、3.9.2.23 <text style="color: black;font-weight: 200;"
-                selectable="false" space="false" decode="false">=></text>
+        <p class="status-indicator">支持客户端：3.9.2.23 <text style="color: black;font-weight: 200;" selectable="false"
+                space="false" decode="false">=></text>
             <text id="wechat-version" style="color:cadetblue;"></text>
         </p>
         <pre id="log">载入中...</pre>
@@ -102,16 +108,38 @@
             ipcRenderer.send('stop-funtool');
         });
 
-        document.getElementById('startButtonBot').addEventListener('click', () => {
-            ipcRenderer.send('start-bot');
-        });
+        // document.getElementById('startButtonBot').addEventListener('click', () => {
+        //     ipcRenderer.send('start-bot');
+        // });
 
-        document.getElementById('stopButtonBot').addEventListener('click', () => {
-            ipcRenderer.send('stop-bot');
-        });
+        // document.getElementById('stopButtonBot').addEventListener('click', () => {
+        //     ipcRenderer.send('stop-bot');
+        // });
 
         document.getElementById('restartButton').addEventListener('click', () => {
             ipcRenderer.send('restart-app');
+        });
+
+        document.getElementById('downloadTemplateButton').addEventListener('click', () => {
+            ipcRenderer.send('download-template');
+        });
+
+        document.getElementById('uploadButton').addEventListener('click', () => {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            if (file) {
+                ipcRenderer.send('upload-excel', file.path);
+            } else {
+                alert('请选择一个文件。');
+            }
+        });
+
+        document.getElementById('exportButton').addEventListener('click', () => {
+            ipcRenderer.send('export-contacts');
+        });
+
+        document.getElementById('sendButton').addEventListener('click', () => {
+            ipcRenderer.send('send-message');
         });
 
         ipcRenderer.on('action-result', (event, result) => {
@@ -148,25 +176,6 @@
                 startButtonSidecar.disabled = true;
                 stopButtonSidecar.disabled = true;
             }
-        });
-
-        document.getElementById('downloadTemplateButton').addEventListener('click', () => {
-            ipcRenderer.send('download-template');
-        });
-
-        document.getElementById('uploadButton').addEventListener('click', () => {
-            const fileInput = document.getElementById('fileInput');
-            const file = fileInput.files[0];
-            if (file) {
-                ipcRenderer.send('upload-excel', file.path);
-            } else {
-                alert('请选择一个文件。');
-            }
-        });
-
-        ipcRenderer.on('excel-data', (event, data) => {
-            const logDiv = document.getElementById('log');
-            logDiv.textContent = JSON.stringify(data, null, 2);
         });
     </script>
 </body>

@@ -2,8 +2,8 @@ const {
     app,
     BrowserWindow,
     ipcMain,
-    // shell,
-    // dialog
+    shell,
+    dialog
 } = require('electron');
 const { spawn, exec } = require('child_process');
 const path = require('path');
@@ -22,18 +22,25 @@ let sidecarProcess = null;
 let funtoolProcess = null;
 let botProcess = null;
 
-let result = '程序启动，等待操作...<br>';
+let jobs = [];
+
+const getTime = () => {
+    const timeutc = new Date().toLocaleString();
+    return timeutc;
+}
+
+let result = `${getTime()}:程序启动，等待操作...<br>`;
 
 async function onLogin(user) {
     log.info('onLogin', '%s login', user)
-    result = `${user} login<br>` + result;
+    result = `${getTime()}:${user} login<br>` + result;
     mainWindow.webContents.send('action-result', result);
 
     const roomList = await bot.Room.findAll()
     console.info('room count:', roomList.length)
     const contactList = await bot.Contact.findAll()
     console.info('contact count:', contactList.length)
-    result = `contact count: ${contactList.length},room count: ${roomList.length}<br>` + result;
+    result = `${getTime()}:contact count: ${contactList.length},room count: ${roomList.length}<br>` + result;
     mainWindow.webContents.send('action-result', result);
 
 }
@@ -88,40 +95,39 @@ function createWindow() {
     mainWindow.loadFile('index.html');
 
     ipcMain.on('start-funtool', () => {
-        const timeutc = new Date().toLocaleString();
+
         if (!funtoolProcess) {
             const execPath = path.join(__dirname, 'assets', 'funtool_wx=3.9.2.23.exe');
             funtoolProcess = spawn(execPath);
             funtoolProcess.on('spawn', () => {
-                result = `${timeutc}:funtool已启动！<br>` + result;
+                result = `${getTime()}:funtool已启动！<br>` + result;
                 mainWindow.webContents.send('action-result', result);
             });
             funtoolProcess.on('error', (err) => {
-                result = `${timeutc}:启动funtool时发生错误: ${err}<br>` + result;
+                result = `${getTime()}:启动funtool时发生错误: ${err}<br>` + result;
                 mainWindow.webContents.send('action-result', result);
             });
         } else {
-            result = `${timeutc}:funtool已在运行中...<br>` + result;
+            result = `${getTime()}:funtool已在运行中...<br>` + result;
             mainWindow.webContents.send('action-result', result);
         }
     });
 
     ipcMain.on('stop-funtool', () => {
-        const timeutc = new Date().toLocaleString();
 
         if (funtoolProcess) {
             funtoolProcess.kill();
             funtoolProcess = null;
-            result = `${timeutc}:funtool已停止...<br>` + result;
+            result = `${getTime()}:funtool已停止...<br>` + result;
             mainWindow.webContents.send('action-result', result);
         } else {
-            result = `${timeutc}:funtool未在运行...<br>` + result;
+            result = `${getTime()}:funtool未在运行...<br>` + result;
             mainWindow.webContents.send('action-result', result);
         }
     });
 
     ipcMain.on('start-sidecar', () => {
-        const timeutc = new Date().toLocaleString();
+        const timeutc = getTime();
 
         if (!sidecarProcess) {
             const execPath = path.join(__dirname, 'assets', 'wxbot-sidecar.exe');
@@ -141,7 +147,7 @@ function createWindow() {
     });
 
     ipcMain.on('stop-sidecar', () => {
-        const timeutc = new Date().toLocaleString();
+        const timeutc = getTime();
         if (sidecarProcess) {
             sidecarProcess.kill();
             sidecarProcess = null;
@@ -154,7 +160,7 @@ function createWindow() {
     });
 
     ipcMain.on('start-bot', () => {
-        const timeutc = new Date().toLocaleString();
+        const timeutc = getTime();
 
         if (!botProcess) {
             bot.start()
@@ -199,7 +205,7 @@ function createWindow() {
     });
 
     ipcMain.on('download-template', async (event) => {
-        const templatePath = path.join(__dirname, 'assets', 'template.xlsx');
+        const templatePath = path.join(__dirname, 'assets', 'contacts.xlsx');
 
         // 弹出保存文件对话框
         const { filePath } = await dialog.showSaveDialog(mainWindow, {
@@ -215,11 +221,13 @@ function createWindow() {
             fs.copyFile(templatePath, filePath, (err) => {
                 if (err) {
                     console.error('Error copying the template file', err);
-                    mainWindow.webContents.send('action-result', '下载模板失败: ' + err.message);
+                    result = `${getTime()}:下载模板失败: ${err.message}<br>` + result;
+                    mainWindow.webContents.send('action-result', result);
                 } else {
                     // 打开文件夹并选中文件
                     shell.showItemInFolder(filePath);
-                    mainWindow.webContents.send('action-result', '模板已下载到: ' + filePath);
+                    result = `${getTime()}:模板已下载到: ${filePath}<br>` + result;
+                    mainWindow.webContents.send('action-result', result);
                 }
             });
         }
@@ -231,12 +239,67 @@ function createWindow() {
             const sheetName = workbook.SheetNames[0];
             const worksheet = workbook.Sheets[sheetName];
             const data = xlsx.utils.sheet_to_json(worksheet);
-            mainWindow.webContents.send('excel-data', data);
+            jobs = data.filter(item => item['name'] && item['id'] && item['text']);
+
+            result = `${getTime()}:读取Excel文件成功,待发送消息：${jobs.length}<br>` + result;
+            mainWindow.webContents.send('action-result', result);
+
+            jobs.forEach((item, index) => {
+                const { id, name, text } = item;
+                result = `${index + 1} ${name} ${text}<br>` + result;
+            });
+
+            result = '任务列表：<br>' + result;
+            mainWindow.webContents.send('action-result', result);
         } catch (error) {
             console.error('Error reading the Excel file', error);
-            mainWindow.webContents.send('action-result', '读取Excel文件出错: ' + error.message);
+            result = `${getTime()}:读取Excel文件出错: ${error.message}<br>` + result;
+            mainWindow.webContents.send('action-result', result);
         }
     });
+
+    ipcMain.on('export-contacts', async () => {
+        try {
+            const filePath = await exportContactsToExcel();
+            result = `${getTime()}:联系人已导出到: ${filePath}<br>` + result;
+            mainWindow.webContents.send('action-result', result);
+        } catch (error) {
+            result = `${getTime()}:导出联系人时出错: ${error.message}<br>` + result;
+            mainWindow.webContents.send('action-result', result);
+        }
+    });
+
+    ipcMain.on('send-message', async (event, message) => {
+        const timeutc = getTime();
+        if (botProcess) {
+            if (jobs.length > 0) {
+                result = `${timeutc}:开始发送消息...<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+
+                for (let i = 0; i < jobs.length; i++) {
+                    const item = jobs[i];
+                    const { id, name, text } = item;
+                    const contact = await bot.Contact.find({ id });
+                    if (contact) {
+                        await contact.say(text);
+                        result = `${timeutc}:${name} ${text}<br>` + result;
+                        mainWindow.webContents.send('action-result', result);
+                    } else {
+                        result = `${timeutc}:未找到联系人 ${name}<br>` + result;
+                        mainWindow.webContents.send('action-result', result);
+                    }
+                }
+                result = `${timeutc}:发送消息完成！<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+            } else {
+                result = `${timeutc}:没有待发送的消息...<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+            }
+        } else {
+            result = `${timeutc}:Bot未启动...<br>` + result;
+            mainWindow.webContents.send('action-result', result);
+        }
+    })
 
     bot.start()
         .then(() => {
@@ -255,7 +318,38 @@ function createWindow() {
             result = `${timeutc}:启动Bot时发生错误...${err}<br>` + result;
             mainWindow.webContents.send('action-result', result);
         })
+}
 
+async function exportContactsToExcel() {
+    try {
+        const contactList = await bot.Contact.findAll();
+        const data = contactList.filter(contact => contact.friend())
+            .map(contact => ({
+                id: contact.id,
+                name: contact.name(),
+                alias: contact.alias() || 'N/A', // 如果没有别名，显示 'N/A'
+                text: '',
+                state: '',
+            }));
+
+        // 转换数据为工作表
+        const worksheet = xlsx.utils.json_to_sheet(data);
+        const workbook = xlsx.utils.book_new();
+        xlsx.utils.book_append_sheet(workbook, worksheet, 'Contacts');
+
+        // 生成Excel文件并保存
+        const filePath = path.join(__dirname, 'assets', 'contacts.xlsx');
+        xlsx.writeFile(workbook, filePath);
+        result = `${getTime()}:联系人已导出到: ${filePath}<br>` + result;
+        mainWindow.webContents.send('action-result', result);
+        console.log('Contacts have been exported to Excel.');
+        return filePath;
+    } catch (error) {
+        result = `${getTime()}:导出联系人时出错: ${error.message}<br>` + result;
+        mainWindow.webContents.send('action-result', result);
+        console.error('Failed to export contacts:', error);
+        throw error; // 抛出错误供上层处理
+    }
 }
 
 function checkWeChat() {

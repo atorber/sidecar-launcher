@@ -1,12 +1,12 @@
 {
   "name": "sidecar-launcher",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "",
   "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron src/main.js",
-    "package": "electron-packager src --overwrite"
+    "package": "electron-packager src/main.js --overwrite"
   },
   "keywords": [],
   "author": "",

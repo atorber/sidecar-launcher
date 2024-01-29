@@ -5,3 +5,8 @@ node_modules/
 /package-lock.json
 sidecar-launcher-win32-x64/*
 logs/wxbot.log
+messageTypeTest.json
+logs/wxbot.log
+logs/wxbot.log
+logs/wxbot.log
+src/assets/contacts.xlsx
