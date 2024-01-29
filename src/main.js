@@ -1,19 +1,28 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const {
+    app,
+    BrowserWindow,
+    ipcMain,
+    // shell,
+    // dialog
+} = require('electron');
 const { spawn, exec } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 const {
     WechatyBuilder,
     log,
 } = require('wechaty')
+
 const { FileBox } = require('file-box')
 const { PuppetBridge } = require('wechaty-puppet-bridge')
+const xlsx = require('xlsx');
 
 let mainWindow;
 let sidecarProcess = null;
 let funtoolProcess = null;
 let botProcess = null;
 
-let result = '程序启动，载入中...';
+let result = '程序启动，等待操作...<br>';
 
 async function onLogin(user) {
     log.info('onLogin', '%s login', user)
@@ -37,7 +46,7 @@ async function onMessage(message) {
     // 生成2024-1-28 21:51:06格式的时间
     const timeutc = new Date().toLocaleString()
     result = `${timeutc} ${room ? '[' + await room.topic() + ']' : ''} ${talker.name()}: ${text}<br>` + result
-    mainWindow.webContents.send('action-result', result); 
+    mainWindow.webContents.send('action-result', result);
     // 1. send Image
     if (/^ding$/i.test(message.text())) {
         const fileBox = FileBox.fromUrl('https://wechaty.github.io/wechaty/images/bot-qr-code.png')
@@ -65,7 +74,7 @@ bot.on('message', onMessage)
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 800,
+        width: 900,
         height: 600,
         webPreferences: {
             nodeIntegration: true,
@@ -149,17 +158,17 @@ function createWindow() {
 
         if (!botProcess) {
             bot.start()
-            .then(() => {
-                botProcess = true;
-                result = `${timeutc}:Bot已启动！<br>` + result;
-                mainWindow.webContents.send('action-result', result);
-                return log.info('StarterBot', 'Starter Bot Started.')
-            })
-            .catch((err)=>{
-                console.error('bot start error', err)
-                result = `${timeutc}:启动Bot时发生错误...${err}<br>` + result;
-                mainWindow.webContents.send('action-result', result);
-            })
+                .then(() => {
+                    botProcess = true;
+                    result = `${timeutc}:Bot已启动！<br>` + result;
+                    mainWindow.webContents.send('action-result', result);
+                    return log.info('StarterBot', 'Starter Bot Started.')
+                })
+                .catch((err) => {
+                    console.error('bot start error', err)
+                    result = `${timeutc}:启动Bot时发生错误...${err}<br>` + result;
+                    mainWindow.webContents.send('action-result', result);
+                })
         } else {
             result = `${timeutc}:Bot已在运行中...<br>` + result;
             mainWindow.webContents.send('action-result', result);
@@ -169,11 +178,11 @@ function createWindow() {
     ipcMain.on('stop-bot', () => {
         const timeutc = new Date().toLocaleString();
         if (botProcess) {
-            bot.stop().then(()=>{
+            bot.stop().then(() => {
                 botProcess = null;
                 result = `${timeutc}:bot已停止...<br>` + result;
                 mainWindow.webContents.send('action-result', result);
-            }).catch((err)=>{
+            }).catch((err) => {
                 console.error('bot stop error', err)
                 result = `${timeutc}:bot停止时发生错误...${err}<br>` + result;
                 mainWindow.webContents.send('action-result', result);
@@ -183,6 +192,69 @@ function createWindow() {
             mainWindow.webContents.send('action-result', result);
         }
     });
+
+    ipcMain.on('restart-app', () => {
+        app.relaunch();
+        app.exit();
+    });
+
+    ipcMain.on('download-template', async (event) => {
+        const templatePath = path.join(__dirname, 'assets', 'template.xlsx');
+
+        // 弹出保存文件对话框
+        const { filePath } = await dialog.showSaveDialog(mainWindow, {
+            title: '保存模板',
+            defaultPath: 'template.xlsx',
+            filters: [
+                { name: 'Excel Files', extensions: ['xlsx'] }
+            ]
+        });
+
+        if (filePath) {
+            // 将模板文件复制到用户选择的位置
+            fs.copyFile(templatePath, filePath, (err) => {
+                if (err) {
+                    console.error('Error copying the template file', err);
+                    mainWindow.webContents.send('action-result', '下载模板失败: ' + err.message);
+                } else {
+                    // 打开文件夹并选中文件
+                    shell.showItemInFolder(filePath);
+                    mainWindow.webContents.send('action-result', '模板已下载到: ' + filePath);
+                }
+            });
+        }
+    });
+
+    ipcMain.on('upload-excel', (event, filePath) => {
+        try {
+            const workbook = xlsx.readFile(filePath);
+            const sheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[sheetName];
+            const data = xlsx.utils.sheet_to_json(worksheet);
+            mainWindow.webContents.send('excel-data', data);
+        } catch (error) {
+            console.error('Error reading the Excel file', error);
+            mainWindow.webContents.send('action-result', '读取Excel文件出错: ' + error.message);
+        }
+    });
+
+    bot.start()
+        .then(() => {
+            console.log('bot start success')
+            const timeutc = new Date().toLocaleString();
+
+            botProcess = true;
+            result = `${timeutc}:Bot已启动！<br>` + result;
+            mainWindow.webContents.send('action-result', result);
+            return log.info('StarterBot', 'Starter Bot Started.')
+        })
+        .catch((err) => {
+            const timeutc = new Date().toLocaleString();
+
+            console.error('bot start error', err)
+            result = `${timeutc}:启动Bot时发生错误...${err}<br>` + result;
+            mainWindow.webContents.send('action-result', result);
+        })
 
 }
 
@@ -210,9 +282,14 @@ function checkWeChat() {
                     return;
                 }
 
-                resultVersion = `本机安装的版本号: ${stdout.trim()}`;
-                console.log(`WeChat Version: ${stdout.trim()}`);
-                mainWindow.webContents.send('wechat-check-result', resultVersion);
+                resultVersion = `本机安装的客户端版本: ${stdout.trim()}`;
+                console.log(resultVersion);
+                try {
+                    mainWindow.webContents.send('wechat-check-result', resultVersion);
+                    console.log('send wechat-version');
+                } catch (e) {
+                    console.error(e);
+                }
             });
         } else {
             resultVersion = 'WeChat 未运行...';

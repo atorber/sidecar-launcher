@@ -1,0 +1,223 @@
+{
+  "1": {
+    "content": "今天是不是有球？",
+    "id": "20240129174234",
+    "id1": "wxid_37j4imu7cbmi21",
+    "id2": "wxid_37j4imu7cbmi21",
+    "id3": "",
+    "other": "<msgsource>\n\t<bizflag>0</bizflag>\n\t<pua>1</pua>\n\t<silence>1</silence>\n\t<membercount>9</membercount>\n\t<signature>V1_gPOyKzjv|v1_GXeIo0V/</signature>\n\t<tmp_node>\n\t\t<publisher-id></publisher-id>\n\t</tmp_node>\n</msgsource>\n",
+    "srvid": 1,
+    "time": "2024-01-29 17:42:34",
+    "type": 1,
+    "wxid": "17446623807@chatroom"
+  },
+  "3": {
+    "content": {
+      "content": "<?xml version=\"1.0\"?>\n<msg>\n\t<img aeskey=\"cf8508d612d5afb566aca6e20d6d9d8b\" encryver=\"1\" cdnthumbaeskey=\"cf8508d612d5afb566aca6e20d6d9d8b\" cdnthumburl=\"3057020100044b30490201000204c08737f702032f501e02041b845ad3020465b770f3042462663663633862612d626264632d343364322d393633382d623132323362646534346639020401290a020201000405004c51e600\" cdnthumblength=\"4218\" cdnthumbheight=\"144\" cdnthumbwidth=\"65\" cdnmidheight=\"0\" cdnmidwidth=\"0\" cdnhdheight=\"0\" cdnhdwidth=\"0\" cdnmidimgurl=\"3057020100044b30490201000204c08737f702032f501e02041b845ad3020465b770f3042462663663633862612d626264632d343364322d393633382d623132323362646534346639020401290a020201000405004c51e600\" length=\"61258\" md5=\"3a07e965a9503a9ff5f02c9dbdcef84a\" hevc_mid_size=\"61258\" originsourcemd5=\"519724bfe581fab4c5a95ccd28fd81b5\" />\n\t<platform_signature></platform_signature>\n\t<imgdatahash></imgdatahash>\n\t<ImgSourceInfo>\n\t\t<ImgSourceUrl></ImgSourceUrl>\n\t\t<BizType>0</BizType>\n\t</ImgSourceInfo>\n\t<wxaInfo>\n\t\t<appId>wx6272b3d8d16955ff</appId>\n\t\t<nickname>用友产业园</nickname>\n\t\t<iconUrl>http://wx.qlogo.cn/mmhead/Q3auHgzwzM58EYYrWV29qL0uDtWS1SSuibLgu7QOPUyCsJAMXtpoX5A/96</iconUrl>\n\t\t<enterPath>pages/logs/jobWebView.html?pageURL=venue%2FnewReserveVenueList&amp;id=</enterPath>\n\t\t<forwardSceneNote>0</forwardSceneNote>\n\t\t<showSourceView>0</showSourceView>\n\t</wxaInfo>\n</msg>\n",
+      "detail": "wxid_0o1t51l3f57221\\FileStorage\\MsgAttach\\d2a308ec1e5555ba9fdab5f4e991d274\\Image\\2024-01\\267fef81147a17af6759c7f7a3b041b5.dat",
+      "id1": "17446623807@chatroom",
+      "id2": "wxid_6893598935712",
+      "thumb": "wxid_0o1t51l3f57221\\FileStorage\\MsgAttach\\d2a308ec1e5555ba9fdab5f4e991d274\\Thumb\\2024-01\\38c2cfc8d44e8d6e354b5de39a2999cc_t.dat"
+    },
+    "id": "20240129173340",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-29 17:33:40",
+    "type": 3
+  },
+  "4": {
+    "content": "websocket:please reference client-3.2.1.121.js",
+    "id": "20240129180648",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "FAILED",
+    "time": "2024-01-29 18:06:48",
+    "type": 4
+  },
+  "5": {
+    "content": "hello guys",
+    "id": "20240129180648",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-29 18:06:48",
+    "type": 5
+  },
+  "5005": {
+    "content": "heart beat",
+    "id": "20240129180612",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-29 18:06:12",
+    "type": 5005
+  },
+  "10000": [
+    {
+      "content": {
+        "content": "群收款消息，请在手机上查看",
+        "id1": "19807533363@chatroom"
+      },
+      "id": "20240129125631",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-29 12:56:31",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "\"靖\"邀请\"聂宏兵\"加入了群聊",
+        "id1": "44691574243@chatroom"
+      },
+      "id": "20240129140431",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-29 14:04:31",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "\"羽球健身\"邀请\"靖\"加入了群聊",
+        "id1": "19807533363@chatroom"
+      },
+      "id": "20240129145633",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-29 14:56:33",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "\"单车🚲\" 拍了拍 \"阿良\"",
+        "id1": "47331170911@chatroom"
+      },
+      "id": "20240129154207",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-29 15:42:07",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "\"安山wxbot\"邀请\"AJ🐟\"加入了群聊",
+        "id1": "47331170911@chatroom"
+      },
+      "id": "20240129174322",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-29 17:43:22",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "\"AJ🐟\"与群里其他人都不是朋友关系，请注意隐私安全",
+        "id1": "47331170911@chatroom"
+      },
+      "id": "20240129174322",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-29 17:43:22",
+      "type": 10000
+    },
+    {
+      "content": {
+        "content": "\"安山wxbot\"邀请\"阿鑫 COOK\"加入了群聊",
+        "id1": "47331170911@chatroom"
+      },
+      "id": "20240129174323",
+      "receiver": "CLIENT",
+      "sender": "SERVER",
+      "srvid": 1,
+      "status": "SUCCSESSED",
+      "time": "2024-01-29 17:43:23",
+      "type": 10000
+    }
+  ],
+  "49_33": {
+    "content": {
+      "content": "<?xml version=\"1.0\"?>\n<msg>\n\t<appmsg appid=\"\" sdkver=\"0\">\n\t\t<title>报名啦~</title>\n\t\t<des />\n\t\t<username />\n\t\t<action>view</action>\n\t\t<type>33</type>\n\t\t<showtype>0</showtype>\n\t\t<content />\n\t\t<url>https://mp.weixin.qq.com/mp/waerrpage?appid=wx36027ed8c62f675e&amp;type=upgrade&amp;upgradetype=3#wechat_redirect</url>\n\t\t<lowurl />\n\t\t<forwardflag>0</forwardflag>\n\t\t<dataurl />\n\t\t<lowdataurl />\n\t\t<contentattr>0</contentattr>\n\t\t<streamvideo>\n\t\t\t<streamvideourl />\n\t\t\t<streamvideototaltime>0</streamvideototaltime>\n\t\t\t<streamvideotitle />\n\t\t\t<streamvideowording />\n\t\t\t<streamvideoweburl />\n\t\t\t<streamvideothumburl />\n\t\t\t<streamvideoaduxinfo />\n\t\t\t<streamvideopublishid />\n\t\t</streamvideo>\n\t\t<canvasPageItem>\n\t\t\t<canvasPageXml><![CDATA[]]></canvasPageXml>\n\t\t</canvasPageItem>\n\t\t<appattach>\n\t\t\t<attachid />\n\t\t\t<cdnthumburl>3057020100044b304902010002042879647002032e1ddd02041944aa3d020465b7355d042431613465396535652d626664302d346634312d393830362d3130623066613538653763300204011408030201000405004c537500</cdnthumburl>\n\t\t\t<cdnthumbmd5>f1882cbce53ef81dd675114229e06ed2</cdnthumbmd5>\n\t\t\t<cdnthumblength>34280</cdnthumblength>\n\t\t\t<cdnthumbheight>576</cdnthumbheight>\n\t\t\t<cdnthumbwidth>720</cdnthumbwidth>\n\t\t\t<cdnthumbaeskey>8f43852646d6461771950257fb108990</cdnthumbaeskey>\n\t\t\t<aeskey>8f43852646d6461771950257fb108990</aeskey>\n\t\t\t<encryver>1</encryver>\n\t\t\t<fileext />\n\t\t\t<islargefilemsg>0</islargefilemsg>\n\t\t</appattach>\n\t\t<extinfo />\n\t\t<androidsource>0</androidsource>\n\t\t<sourceusername>gh_6c52e2baeb2d@app</sourceusername>\n\t\t<sourcedisplayname>群管理秘书</sourcedisplayname>\n\t\t<commenturl />\n\t\t<thumburl />\n\t\t<mediatagname />\n\t\t<messageaction><![CDATA[]]></messageaction>\n\t\t<messageext><![CDATA[]]></messageext>\n\t\t<emoticongift>\n\t\t\t<packageflag>0</packageflag>\n\t\t\t<packageid />\n\t\t</emoticongift>\n\t\t<emoticonshared>\n\t\t\t<packageflag>0</packageflag>\n\t\t\t<packageid />\n\t\t</emoticonshared>\n\t\t<designershared>\n\t\t\t<designeruin>0</designeruin>\n\t\t\t<designername>null</designername>\n\t\t\t<designerrediretcturl><![CDATA[null]]></designerrediretcturl>\n\t\t</designershared>\n\t\t<emotionpageshared>\n\t\t\t<tid>0</tid>\n\t\t\t<title>null</title>\n\t\t\t<desc>null</desc>\n\t\t\t<iconUrl><![CDATA[null]]></iconUrl>\n\t\t\t<secondUrl>null</secondUrl>\n\t\t\t<pageType>0</pageType>\n\t\t\t<setKey>null</setKey>\n\t\t</emotionpageshared>\n\t\t<webviewshared>\n\t\t\t<shareUrlOriginal />\n\t\t\t<shareUrlOpen />\n\t\t\t<jsAppId />\n\t\t\t<publisherId>wxapp_wx36027ed8c62f675epages/start/details/details.html?fr=share&amp;id=253e6d5d65b6fee600a3cf4424a9124a</publisherId>\n\t\t\t<publisherReqId />\n\t\t</webviewshared>\n\t\t<template_id />\n\t\t<md5>f1882cbce53ef81dd675114229e06ed2</md5>\n\t\t<websearch>\n\t\t\t<rec_category>0</rec_category>\n\t\t\t<channelId>0</channelId>\n\t\t</websearch>\n\t\t<weappinfo>\n\t\t\t<pagepath><![CDATA[pages/start/details/details.html?fr=share&id=253e6d5d65b6fee600a3cf4424a9124a]]></pagepath>\n\t\t\t<username>gh_6c52e2baeb2d@app</username>\n\t\t\t<appid>wx36027ed8c62f675e</appid>\n\t\t\t<version>122</version>\n\t\t\t<type>3</type>\n\t\t\t<weappiconurl><![CDATA[http://wx.qlogo.cn/mmhead/Q3auHgzwzM6ufWT0icmdN9VEuWOInSXCl57DzCA4CK4XF5mVAyvgV4A/96]]></weappiconurl>\n\t\t\t<shareId><![CDATA[1_wx36027ed8c62f675e_cb82b78b048f96eacd363acb5d75b960_1706505564_0]]></shareId>\n\t\t\t<sharekey><![CDATA[nIbWd5S-Q9NmkwK1Tr0QVe4TLsAiT6Ow2nxgykT7OywLnk3PQgcWHeVFeop2RUmFBeg1Ya-6pQjpOAL9glN6Kotzr65tCXskWukE5phlZxk~]]></sharekey>\n\t\t\t<appservicetype>0</appservicetype>\n\t\t\t<secflagforsinglepagemode>0</secflagforsinglepagemode>\n\t\t\t<videopageinfo>\n\t\t\t\t<thumbwidth>720</thumbwidth>\n\t\t\t\t<thumbheight>576</thumbheight>\n\t\t\t\t<fromopensdk>0</fromopensdk>\n\t\t\t</videopageinfo>\n\t\t</weappinfo>\n\t\t<statextstr />\n\t\t<musicShareItem>\n\t\t\t<musicDuration>0</musicDuration>\n\t\t</musicShareItem>\n\t\t<finderLiveProductShare>\n\t\t\t<finderLiveID><![CDATA[]]></finderLiveID>\n\t\t\t<finderUsername><![CDATA[]]></finderUsername>\n\t\t\t<finderObjectID><![CDATA[]]></finderObjectID>\n\t\t\t<finderNonceID><![CDATA[]]></finderNonceID>\n\t\t\t<liveStatus><![CDATA[]]></liveStatus>\n\t\t\t<appId><![CDATA[]]></appId>\n\t\t\t<pagePath><![CDATA[]]></pagePath>\n\t\t\t<productId><![CDATA[]]></productId>\n\t\t\t<coverUrl><![CDATA[]]></coverUrl>\n\t\t\t<productTitle><![CDATA[]]></productTitle>\n\t\t\t<marketPrice><![CDATA[0]]></marketPrice>\n\t\t\t<sellingPrice><![CDATA[0]]></sellingPrice>\n\t\t\t<platformHeadImg><![CDATA[]]></platformHeadImg>\n\t\t\t<platformName><![CDATA[]]></platformName>\n\t\t\t<shopWindowId><![CDATA[]]></shopWindowId>\n\t\t\t<flashSalePrice><![CDATA[0]]></flashSalePrice>\n\t\t\t<flashSaleEndTime><![CDATA[0]]></flashSaleEndTime>\n\t\t\t<ecSource><![CDATA[]]></ecSource>\n\t\t\t<sellingPriceWording><![CDATA[]]></sellingPriceWording>\n\t\t\t<platformIconURL><![CDATA[]]></platformIconURL>\n\t\t\t<firstProductTagURL><![CDATA[]]></firstProductTagURL>\n\t\t\t<firstProductTagAspectRatioString><![CDATA[0.0]]></firstProductTagAspectRatioString>\n\t\t\t<secondProductTagURL><![CDATA[]]></secondProductTagURL>\n\t\t\t<secondProductTagAspectRatioString><![CDATA[0.0]]></secondProductTagAspectRatioString>\n\t\t\t<firstGuaranteeWording><![CDATA[]]></firstGuaranteeWording>\n\t\t\t<secondGuaranteeWording><![CDATA[]]></secondGuaranteeWording>\n\t\t\t<thirdGuaranteeWording><![CDATA[]]></thirdGuaranteeWording>\n\t\t\t<isPriceBeginShow>false</isPriceBeginShow>\n\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n\t\t\t<promoterKey><![CDATA[]]></promoterKey>\n\t\t\t<discountWording><![CDATA[]]></discountWording>\n\t\t\t<priceSuffixDescription><![CDATA[]]></priceSuffixDescription>\n\t\t\t<showBoxItemStringList />\n\t\t</finderLiveProductShare>\n\t\t<finderOrder>\n\t\t\t<appID><![CDATA[]]></appID>\n\t\t\t<orderID><![CDATA[]]></orderID>\n\t\t\t<path><![CDATA[]]></path>\n\t\t\t<priceWording><![CDATA[]]></priceWording>\n\t\t\t<stateWording><![CDATA[]]></stateWording>\n\t\t\t<productImageURL><![CDATA[]]></productImageURL>\n\t\t\t<products><![CDATA[]]></products>\n\t\t\t<productsCount><![CDATA[0]]></productsCount>\n\t\t</finderOrder>\n\t\t<finderShopWindowShare>\n\t\t\t<finderUsername><![CDATA[]]></finderUsername>\n\t\t\t<avatar><![CDATA[]]></avatar>\n\t\t\t<nickname><![CDATA[]]></nickname>\n\t\t\t<commodityInStockCount><![CDATA[]]></commodityInStockCount>\n\t\t\t<appId><![CDATA[]]></appId>\n\t\t\t<path><![CDATA[]]></path>\n\t\t\t<appUsername><![CDATA[]]></appUsername>\n\t\t\t<query><![CDATA[]]></query>\n\t\t\t<liteAppId><![CDATA[]]></liteAppId>\n\t\t\t<liteAppPath><![CDATA[]]></liteAppPath>\n\t\t\t<liteAppQuery><![CDATA[]]></liteAppQuery>\n\t\t\t<platformTagURL><![CDATA[]]></platformTagURL>\n\t\t\t<saleWording><![CDATA[]]></saleWording>\n\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n\t\t\t<profileTypeWording><![CDATA[]]></profileTypeWording>\n\t\t\t<reputationInfo>\n\t\t\t\t<hasReputationInfo>0</hasReputationInfo>\n\t\t\t\t<reputationScore>0</reputationScore>\n\t\t\t\t<reputationWording />\n\t\t\t\t<reputationTextColor />\n\t\t\t\t<reputationLevelWording />\n\t\t\t\t<reputationBackgroundColor />\n\t\t\t</reputationInfo>\n\t\t\t<productImageURLList />\n\t\t</finderShopWindowShare>\n\t\t<findernamecard>\n\t\t\t<username />\n\t\t\t<avatar><![CDATA[]]></avatar>\n\t\t\t<nickname />\n\t\t\t<auth_job />\n\t\t\t<auth_icon>0</auth_icon>\n\t\t\t<auth_icon_url />\n\t\t\t<ecSource><![CDATA[]]></ecSource>\n\t\t\t<lastGMsgID><![CDATA[]]></lastGMsgID>\n\t\t</findernamecard>\n\t\t<finderGuarantee>\n\t\t\t<scene><![CDATA[0]]></scene>\n\t\t</finderGuarantee>\n\t\t<directshare>0</directshare>\n\t\t<gamecenter>\n\t\t\t<namecard>\n\t\t\t\t<iconUrl />\n\t\t\t\t<name />\n\t\t\t\t<desc />\n\t\t\t\t<tail />\n\t\t\t\t<jumpUrl />\n\t\t\t</namecard>\n\t\t</gamecenter>\n\t\t<patMsg>\n\t\t\t<chatUser />\n\t\t\t<records>\n\t\t\t\t<recordNum>0</recordNum>\n\t\t\t</records>\n\t\t</patMsg>\n\t\t<secretmsg>\n\t\t\t<issecretmsg>0</issecretmsg>\n\t\t</secretmsg>\n\t\t<referfromscene>0</referfromscene>\n\t\t<gameshare>\n\t\t\t<liteappext>\n\t\t\t\t<liteappbizdata />\n\t\t\t\t<priority>0</priority>\n\t\t\t</liteappext>\n\t\t\t<appbrandext>\n\t\t\t\t<litegameinfo />\n\t\t\t\t<priority>-1</priority>\n\t\t\t</appbrandext>\n\t\t\t<gameshareid />\n\t\t\t<sharedata />\n\t\t\t<isvideo>0</isvideo>\n\t\t\t<duration>-1</duration>\n\t\t\t<isexposed>0</isexposed>\n\t\t\t<readtext />\n\t\t</gameshare>\n\t\t<mpsharetrace>\n\t\t\t<hasfinderelement>0</hasfinderelement>\n\t\t\t<lastgmsgid />\n\t\t</mpsharetrace>\n\t\t<wxgamecard>\n\t\t\t<framesetname />\n\t\t\t<mbcarddata />\n\t\t\t<minpkgversion />\n\t\t\t<mbcardheight>0</mbcardheight>\n\t\t\t<isoldversion>0</isoldversion>\n\t\t</wxgamecard>\n\t</appmsg>\n\t<fromusername>wxid_3ut521dq98fn12</fromusername>\n\t<scene>0</scene>\n\t<appinfo>\n\t\t<version>1</version>\n\t\t<appname></appname>\n\t</appinfo>\n\t<commenturl></commenturl>\n</msg>\n",
+      "id1": "22232811504@chatroom",
+      "id2": "wxid_3ut521dq98fn12"
+    },
+    "id": "20240129131935",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-29 13:19:35",
+    "type": 49
+  },
+  "49_57": {
+    "content": {
+      "content": "<?xml version=\"1.0\"?>\n<msg>\n\t<appmsg appid=\"\" sdkver=\"0\">\n\t\t<title>晚上暴力熊自己有组织活动，你可以报名那个</title>\n\t\t<type>57</type>\n\t\t<appattach>\n\t\t\t<cdnthumbaeskey />\n\t\t\t<aeskey />\n\t\t</appattach>\n\t\t<refermsg>\n\t\t\t<type>1</type>\n\t\t\t<svrid>2330748404498762429</svrid>\n\t\t\t<fromusr>20889085065@chatroom</fromusr>\n\t\t\t<chatusr>wxid_8un8lsjuso6921</chatusr>\n\t\t\t<displayname>石日月</displayname>\n\t\t\t<content>今天没有么？</content>\n\t\t\t<msgsource>&lt;msgsource&gt;&lt;sequence_id&gt;838233247&lt;/sequence_id&gt;\n\t&lt;bizflag&gt;0&lt;/bizflag&gt;\n\t&lt;pua&gt;1&lt;/pua&gt;\n\t&lt;silence&gt;0&lt;/silence&gt;\n\t&lt;membercount&gt;222&lt;/membercount&gt;\n\t&lt;signature&gt;V1_fxDySXC/|v1_zCw30dzm&lt;/signature&gt;\n\t&lt;tmp_node&gt;\n\t\t&lt;publisher-id&gt;&lt;/publisher-id&gt;\n\t&lt;/tmp_node&gt;\n&lt;/msgsource&gt;\n</msgsource>\n\t\t\t<createtime>1706516646</createtime>\n\t\t</refermsg>\n\t</appmsg>\n\t<fromusername>wxid_8qg32wbclit022</fromusername>\n\t<scene>0</scene>\n\t<appinfo>\n\t\t<version>1</version>\n\t\t<appname></appname>\n\t</appinfo>\n\t<commenturl></commenturl>\n</msg>\n",
+      "id1": "20889085065@chatroom",
+      "id2": "wxid_8qg32wbclit022"
+    },
+    "id": "20240129165648",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-29 16:56:48",
+    "type": 49
+  },
+  "49_87": {
+    "content": {
+      "content": "<?xml version=\"1.0\"?>\n<msg>\n    <appmsg appid=\"\" sdkver=\"0\">\n        <type>87</type>\n        <url>https://support.weixin.qq.com/cgi-bin/mmsupport-bin/readtemplate?t=page/common_page__upgrade&amp;btn_text=btn_text_0&amp;text=text008</url>\n        <announcement><![CDATA[<group_notice_item>\n\t<datalist count=\"2\">\n\t\t<dataitem datatype=\"8\" htmlid=\"WeNoteHtmlFile\" dataid=\"1ae59e9eb1b812aa78681eea4c7956dc\">\n\t\t\t<fullmd5>c1d088858414878532290c87aad5d8ef</fullmd5>\n\t\t\t<cdn_dataurl>http://wxapp.tc.qq.com/264/20303/stodownload?m=92ba94be23ff5e8d9dc47cb47d2e821a&amp;filekey=3033020101041f301d0202010804025348041092ba94be23ff5e8d9dc47cb47d2e821a020170040d00000004627466730000000132&amp;hy=SH&amp;storeid=265b74a7e000b7e1eb2967f640000010800004f4f534818a65b01e65c6dd2d&amp;bizid=1023</cdn_dataurl>\n\t\t\t<datafmt>.htm</datafmt>\n\t\t\t<fullsize>100</fullsize>\n\t\t\t<cdn_datakey>1bf07fda4e236d8b8f1c31fa59eda210</cdn_datakey>\n\t\t</dataitem>\n\t\t<dataitem datatype=\"1\" htmlid=\"-1\" dataid=\"9aaf4884125cbbc24872ca833caf07e7\">\n\t\t\t<datadesc>从明天开始群里放假了，群里自由活动，想打球可以自行组织，收费。</datadesc>\n\t\t</dataitem>\n\t</datalist>\n\t<source sourceid=\"ab4de5eaa53a0dae590bd7e67989d4ac\">\n\t\t<tousr>19807533363@chatroom</tousr>\n\t\t<fromusr>F154224767</fromusr>\n\t\t<sourceid>ab4de5eaa53a0dae590bd7e67989d4ac</sourceid>\n\t</source>\n\t<edittime>1706510974</edittime>\n\t<announcement_id>F154224767_19807533363@chatroom_1706510974_2090439333</announcement_id>\n</group_notice_item>\n]]></announcement>\n        <textannouncement><![CDATA[从明天开始群里放假了，群里自由活动，想打球可以自行组织，收费。]]></textannouncement>\n        <xmlpuretext><![CDATA[1]]></xmlpuretext>\n        <announcement_id><![CDATA[F154224767_19807533363@chatroom_1706510974_2090439333]]></announcement_id>\n    </appmsg>\n    <fromusername><![CDATA[F154224767]]></fromusername>\n    <appinfo>\n        <version>1</version>\n        <appname />\n    </appinfo>\n</msg>",
+      "id1": "19807533363@chatroom",
+      "id2": "F154224767"
+    },
+    "id": "20240129144936",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-29 14:49:36",
+    "type": 49
+  },
+  "49_5": {
+    "content": {
+      "content": "<msg>\n    <appmsg appid=\"\" sdkver=\"0\">\n        <title><![CDATA[日本各界希望恢复免签？外交部回应]]></title>\n        <des><![CDATA[]]></des>\n        <action></action>\n        <type>5</type>\n        <showtype>1</showtype>\n        <content><![CDATA[]]></content>\n        <contentattr>0</contentattr>\n        <url><![CDATA[http://mp.weixin.qq.com/s?__biz=MjM5NDI2MDc5NA==&mid=2659441667&idx=1&sn=9b554c2729f8be88fcc3e575beb8c392&chksm=bc6cbe742fb66155776bd4a15dff058994c23a8b06a3e7fa68bdf8ea2c71086e0c018eb67cb0&scene=0&xtrack=1#rd]]></url>\n        <lowurl><![CDATA[]]></lowurl>\n        <appattach>\n            <totallen>0</totallen>\n            <attachid></attachid>\n            <fileext></fileext>\n        </appattach>\n        <extinfo></extinfo>\n        <mmreader>\n            <category type=\"20\" count=\"2\">\n                <name><![CDATA[中国新闻社]]></name>\n                <topnew>\n                    <cover><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFh4iapnmrianXmnEsNeltSjbJZW3ic8J6jmehXkIHlcwEjF7ge54WcIbK4A/640?wxtype=jpeg&wxfrom=0]]></cover>\n                    <width>0</width>\n                    <height>0</height>\n                    <digest><![CDATA[]]></digest>\n                </topnew>\n                \n                <item>\n                    <has_redpacket_cover>0</has_redpacket_cover>\n                    <text_title><![CDATA[]]></text_title>\n                    <itemshowtype>0</itemshowtype>\n                    <title><![CDATA[日本各界希望恢复免签？外交部回应]]></title>\n                    <url><![CDATA[http://mp.weixin.qq.com/s?__biz=MjM5NDI2MDc5NA==&mid=2659441667&idx=1&sn=9b554c2729f8be88fcc3e575beb8c392&chksm=bcccdd7adb2567d4dd755b1e06f0a9fb4da5145fc0cccfa64d82fa0ba6d53f023fed8236a5b1&scene=0&xtrack=1#rd]]></url>\n                    <shorturl><![CDATA[]]></shorturl>\n                    <longurl><![CDATA[]]></longurl>\n                    <pub_time>1706518085</pub_time>\n                    <summary><![CDATA[中国外交部发言人汪文斌29日主持例行记者会。有记者提问：中国和泰国签署了互免签证协议。目前，中方仍未对日本恢复免签政策，很多日本企业希望早日恢复免签。请问中方对此有何回应？汪文斌：中方始终高度重视包括]]></summary>\n                    <cover><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFh4iapnmrianXmnEsNeltSjbJZW3ic8J6jmehXkIHlcwEjF7ge54WcIbK4A/640?wxtype=jpeg&wxfrom=0]]></cover>\n                    <tweetid></tweetid>\n                    <digest><![CDATA[]]></digest>\n                    <fileid>0</fileid>\n                    <sources>\n                        <source>\n                            <name><![CDATA[中国新闻社]]></name>\n                        </source>\n                    </sources>\n                    <styles></styles>\n                    <native_url></native_url>\n                    <del_flag>0</del_flag>\n                    <contentattr>0</contentattr>\n                    <play_length>0</play_length>\n                    <play_url><![CDATA[]]></play_url>\n                    <voice_id><![CDATA[]]></voice_id>\n                    <tid><![CDATA[]]></tid>\n                    <nonce_id><![CDATA[]]></nonce_id>\n                    <voice_type>0</voice_type>\n<player><![CDATA[]]></player>\n                     \n                    \n                    <music_source>0</music_source>\n                    <pic_num>0</pic_num>\n                    <vid></vid>\n                    <author><![CDATA[]]></author>\n                    <recommendation><![CDATA[]]></recommendation>\n                    <pic_urls></pic_urls>\n                    <multi_picture_cover></multi_picture_cover>\n                    <comment_topic_id>3303866934198779914</comment_topic_id>\n                    <cover_235_1><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFh4iapnmrianXmnEsNeltSjbJZW3ic8J6jmehXkIHlcwEjF7ge54WcIbK4A/640?wxtype=jpeg&wxfrom=0]]></cover_235_1>\n                    <cover_1_1><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFhtcKia1mYMib3XANCBkHDooyTzY7HThkJK9wa99pjbX5ZoeibZSiaQrMYibA/300?wxtype=jpeg&wxfrom=0]]></cover_1_1>\n                    <cover_16_9><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFh4iapnmrianXmnEsNeltSjbJZW3ic8J6jmehXkIHlcwEjF7ge54WcIbK4A/640?wxtype=jpeg&wxfrom=0]]></cover_16_9>\n                    <appmsg_like_type>2</appmsg_like_type>\n                    <video_width>0</video_width>\n                    <video_height>0</video_height>\n                    <is_pay_subscribe>0</is_pay_subscribe>\n\t\t\t<finder_feed>\n\t\t\t    <object_id><![CDATA[]]></object_id>\n\t\t\t    <object_nonce_id><![CDATA[]]></object_nonce_id>\n\t\t\t    <feed_type>0</feed_type>\n\t\t\t    <nickname><![CDATA[]]></nickname>\n\t\t\t    <avatar><![CDATA[]]></avatar>\n\t\t\t    <desc><![CDATA[]]></desc>\n\t\t\t    <media_count>0</media_count>\n\t\t\t    <media_list>\n\t\t\t\t\n\t\t\t    </media_list>\n\t\t\t    <mega_video>\n\t\t\t\t<object_id><![CDATA[]]></object_id>\n\t\t\t\t<object_nonce_id><![CDATA[]]></object_nonce_id>\n\t\t\t    </mega_video>\n\t\t\t</finder_feed>\n                        <finder_live>\n                            <finder_username><![CDATA[]]></finder_username>\n                            <category><![CDATA[]]></category>\n                            <finder_nonce_id><![CDATA[]]></finder_nonce_id>\n                            <export_id><![CDATA[]]></export_id>\n                            <nickname><![CDATA[]]></nickname>\n                            <head_url><![CDATA[]]></head_url>\n                            <desc><![CDATA[]]></desc>\n                            <live_status></live_status>\n                            <live_source_type_str><![CDATA[]]></live_source_type_str>\n                            <ext_flag></ext_flag>\n                            <auth_icon_url><![CDATA[]]></auth_icon_url>\n                            <auth_icon_type_str><![CDATA[]]></auth_icon_type_str>\n                            <media>\n                                <cover_url><![CDATA[]]></cover_url>\n                                <height></height>\n                                <width></width>\n                            </media>\n                        </finder_live>\n                </item>\n                \n                <item>\n                    <has_redpacket_cover>0</has_redpacket_cover>\n                    <text_title><![CDATA[]]></text_title>\n                    <itemshowtype>0</itemshowtype>\n                    <title><![CDATA[中国驻瑙鲁大使馆，正式揭牌！]]></title>\n                    <url><![CDATA[http://mp.weixin.qq.com/s?__biz=MjM5NDI2MDc5NA==&mid=2659441667&idx=2&sn=6101e52178238fc82fbadbf3c119e6c4&chksm=bc77814bab687cdf20e807372aeabf9002658b4985542fa8dddb2b3f499475942093a37d60c2&scene=0&xtrack=1#rd]]></url>\n                    <shorturl><![CDATA[]]></shorturl>\n                    <longurl><![CDATA[]]></longurl>\n                    <pub_time>1706518085</pub_time>\n                    <summary><![CDATA[据央视新闻客户端消息，当地时间1月29日，中华人民共和国驻瑙鲁共和国大使馆复馆仪式在瑙鲁梅嫩酒店内隆重举行。图片来源：央视新闻客户端使馆复馆工作组组长王旭光在当天接受采访时表示，复馆是落实两国复交公报]]></summary>\n                    <cover><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFhMZpd9tKNva97iatjwic6DILw2X2ibnwN0aJicEPYryNRoZQictibqzFMSRQQ/300?wxtype=jpeg&wxfrom=0]]></cover>\n                    <tweetid></tweetid>\n                    <digest><![CDATA[]]></digest>\n                    <fileid>0</fileid>\n                    <sources>\n                        <source>\n                            <name><![CDATA[中国新闻社]]></name>\n                        </source>\n                    </sources>\n                    <styles></styles>\n                    <native_url></native_url>\n                    <del_flag>0</del_flag>\n                    <contentattr>0</contentattr>\n                    <play_length>0</play_length>\n                    <play_url><![CDATA[]]></play_url>\n                    <voice_id><![CDATA[]]></voice_id>\n                    <tid><![CDATA[]]></tid>\n                    <nonce_id><![CDATA[]]></nonce_id>\n                    <voice_type>0</voice_type>\n<player><![CDATA[]]></player>\n                     \n                    \n                    <music_source>0</music_source>\n                    <pic_num>0</pic_num>\n                    <vid></vid>\n                    <author><![CDATA[]]></author>\n                    <recommendation><![CDATA[]]></recommendation>\n                    <pic_urls></pic_urls>\n                    <multi_picture_cover></multi_picture_cover>\n                    <comment_topic_id>3303866935524179972</comment_topic_id>\n                    <cover_235_1><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFhKyaicpHQzS5fVaeRI85khjjlmRcjCEeDaP9ia4j9ldnhianmPPibl1dtqA/300?wxtype=jpeg&wxfrom=0]]></cover_235_1>\n                    <cover_1_1><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFhMZpd9tKNva97iatjwic6DILw2X2ibnwN0aJicEPYryNRoZQictibqzFMSRQQ/300?wxtype=jpeg&wxfrom=0]]></cover_1_1>\n                    <cover_16_9><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFhMZpd9tKNva97iatjwic6DILw2X2ibnwN0aJicEPYryNRoZQictibqzFMSRQQ/300?wxtype=jpeg&wxfrom=0]]></cover_16_9>\n                    <appmsg_like_type>2</appmsg_like_type>\n                    <video_width>0</video_width>\n                    <video_height>0</video_height>\n                    <is_pay_subscribe>0</is_pay_subscribe>\n\t\t\t<finder_feed>\n\t\t\t    <object_id><![CDATA[]]></object_id>\n\t\t\t    <object_nonce_id><![CDATA[]]></object_nonce_id>\n\t\t\t    <feed_type>0</feed_type>\n\t\t\t    <nickname><![CDATA[]]></nickname>\n\t\t\t    <avatar><![CDATA[]]></avatar>\n\t\t\t    <desc><![CDATA[]]></desc>\n\t\t\t    <media_count>0</media_count>\n\t\t\t    <media_list>\n\t\t\t\t\n\t\t\t    </media_list>\n\t\t\t    <mega_video>\n\t\t\t\t<object_id><![CDATA[]]></object_id>\n\t\t\t\t<object_nonce_id><![CDATA[]]></object_nonce_id>\n\t\t\t    </mega_video>\n\t\t\t</finder_feed>\n                        <finder_live>\n                            <finder_username><![CDATA[]]></finder_username>\n                            <category><![CDATA[]]></category>\n                            <finder_nonce_id><![CDATA[]]></finder_nonce_id>\n                            <export_id><![CDATA[]]></export_id>\n                            <nickname><![CDATA[]]></nickname>\n                            <head_url><![CDATA[]]></head_url>\n                            <desc><![CDATA[]]></desc>\n                            <live_status></live_status>\n                            <live_source_type_str><![CDATA[]]></live_source_type_str>\n                            <ext_flag></ext_flag>\n                            <auth_icon_url><![CDATA[]]></auth_icon_url>\n                            <auth_icon_type_str><![CDATA[]]></auth_icon_type_str>\n                            <media>\n                                <cover_url><![CDATA[]]></cover_url>\n                                <height></height>\n                                <width></width>\n                            </media>\n                        </finder_live>\n                </item>\n                \n            </category>\n            <publisher>\n                <username><![CDATA[gh_1d2bb1f8096c]]></username>\n                <nickname><![CDATA[中国新闻社]]></nickname>\n            </publisher>\n            <template_header></template_header>\n            <template_detail></template_detail>\n            <forbid_forward>0</forbid_forward>\n        </mmreader>\n        <thumburl><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_jpg/uEICp46xOptQVtySiaScSnmZ8nXKGIXFh4iapnmrianXmnEsNeltSjbJZW3ic8J6jmehXkIHlcwEjF7ge54WcIbK4A/640?wxtype=jpeg&wxfrom=0]]></thumburl>\n    </appmsg>\n    <fromusername><![CDATA[gh_1d2bb1f8096c]]></fromusername>\n    <appinfo>\n        <version></version>\n        <appname><![CDATA[中国新闻社]]></appname>\n        <isforceupdate>1</isforceupdate>\n    </appinfo>\n    \n    \n    \n    \n    \n    \n</msg>",
+      "id1": "gh_1d2bb1f8096c",
+      "id2": ""
+    },
+    "id": "20240129165033",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-29 16:50:33",
+    "type": 49
+  },
+  "49_6": {
+    "content": {
+      "content": "<?xml version=\"1.0\"?>\n<msg>\n\t<appmsg appid=\"wx6618f1cfc6c132f8\" sdkver=\"0\">\n\t\t<title>wechat_channel.py</title>\n\t\t<des />\n\t\t<action>view</action>\n\t\t<type>6</type>\n\t\t<showtype>0</showtype>\n\t\t<content />\n\t\t<url />\n\t\t<dataurl />\n\t\t<lowurl />\n\t\t<lowdataurl />\n\t\t<recorditem />\n\t\t<thumburl />\n\t\t<messageaction />\n\t\t<laninfo />\n\t\t<md5>d2b4cb7f67daf8274d122eb6f44a40dd</md5>\n\t\t<extinfo />\n\t\t<sourceusername />\n\t\t<sourcedisplayname />\n\t\t<commenturl />\n\t\t<appattach>\n\t\t\t<totallen>11257</totallen>\n\t\t\t<attachid>@cdn_3057020100044b3049020100020458cdfebb02032f5405020415a7b4de020465b7693c042465636336666437642d356232662d343238342d393363662d6435623063653335393562300204052800050201000405004c51e500_b9ff30cc90a324642760b74935a2ff1d_1</attachid>\n\t\t\t<emoticonmd5 />\n\t\t\t<fileext>py</fileext>\n\t\t\t<fileuploadtoken>v1_nHotiN5TJgxPPMcfzcIfaGD1aFdM3A/ncCquCQOzDJfQWVEDbcmBBfNaodav8RYG7pnxnhKhJWWW7/rXCa0lQf+ESpgQMEqhuPcz4oGNYoOH5nLYPvK3Sm3YCCj3X2s3f781du092OuM7tkv6O70+FOaeZihvr3m1mf3eNKhAP+7Mo8VhUibFGX21NLTNCwETDYmiD6XVqTuQTQClz69S2EEB3GW+8LN/ZXr</fileuploadtoken>\n\t\t\t<overwrite_newmsgid>7971238813058391821</overwrite_newmsgid>\n\t\t\t<filekey>b248f99f88dd7d5923351feb018898a6</filekey>\n\t\t\t<cdnattachurl>3057020100044b3049020100020458cdfebb02032f5405020415a7b4de020465b7693c042465636336666437642d356232662d343238342d393363662d6435623063653335393562300204052800050201000405004c51e500</cdnattachurl>\n\t\t\t<aeskey>b9ff30cc90a324642760b74935a2ff1d</aeskey>\n\t\t\t<encryver>1</encryver>\n\t\t</appattach>\n\t\t<webviewshared>\n\t\t\t<publisherId />\n\t\t\t<publisherReqId>0</publisherReqId>\n\t\t</webviewshared>\n\t\t<weappinfo>\n\t\t\t<pagepath />\n\t\t\t<username />\n\t\t\t<appid />\n\t\t\t<appservicetype>0</appservicetype>\n\t\t</weappinfo>\n\t\t<websearch />\n\t</appmsg>\n\t<fromusername>wxid_a4w20fqdrfrv22</fromusername>\n\t<scene>0</scene>\n\t<appinfo>\n\t\t<version>7</version>\n\t\t<appname>微信电脑版</appname>\n\t</appinfo>\n\t<commenturl></commenturl>\n</msg>\n",
+      "id1": "50068856275@chatroom",
+      "id2": "wxid_a4w20fqdrfrv22"
+    },
+    "id": "20240129170045",
+    "receiver": "CLIENT",
+    "sender": "SERVER",
+    "srvid": 1,
+    "status": "SUCCSESSED",
+    "time": "2024-01-29 17:00:45",
+    "type": 49
+  }
+}
