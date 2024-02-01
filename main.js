@@ -14,13 +14,18 @@ const {
 } = require('wechaty')
 
 const { FileBox } = require('file-box')
-const { PuppetBridge } = require('wechaty-puppet-bridge')
+const { PuppetBridgeJwpingWxbot, PuppetBridge } = require('wechaty-puppet-bridge')
+// const { PuppetBridge } = require('wechaty-puppet-bridge')
 const xlsx = require('xlsx');
 
+let bot;
 let mainWindow;
 let sidecarProcess = null;
 let funtoolProcess = null;
 let botProcess = null;
+let wechatVersion = '';
+let bridgeIsOn = false;
+let wechatyIsOn = false;
 
 let jobs = [];
 
@@ -47,6 +52,7 @@ async function onLogin(user) {
 
 async function onMessage(message) {
     log.info('onMessage', JSON.stringify(message))
+
     const text = message.text()
     const room = message.room()
     const talker = message.talker()
@@ -68,21 +74,10 @@ async function onMessage(message) {
 
 }
 
-const puppet = new PuppetBridge({
-    nickName: '大师'  // 登录微信的昵称
-})
-const bot = WechatyBuilder.build({
-    name: 'ding-dong-bot',
-    puppet,
-})
-
-bot.on('login', onLogin)
-bot.on('message', onMessage)
-
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 900,
-        height: 600,
+        width: 1080,
+        height: 720,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -97,15 +92,28 @@ function createWindow() {
     ipcMain.on('start-funtool', () => {
 
         if (!funtoolProcess) {
-            const execPath = path.join(__dirname, 'assets', 'funtool_wx=3.9.2.23.exe');
+            let execPath
+            if(wechatVersion === '3.9.2.1000'){
+                execPath = path.join(__dirname, 'assets', 'funtool_wx=3.9.2.23.exe');
+            } else if(wechatVersion === '3.9.8.1000'){
+                execPath = path.join(__dirname, 'assets', 'wxbot-sidecar.exe');
+            } else {
+                result = `${getTime()}:不支持当前版本！<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+            }
+
             funtoolProcess = spawn(execPath);
             funtoolProcess.on('spawn', () => {
                 result = `${getTime()}:funtool已启动！<br>` + result;
                 mainWindow.webContents.send('action-result', result);
+                bridgeIsOn =true
+                mainWindow.webContents.send('bridgeIsOn-result', bridgeIsOn);
             });
             funtoolProcess.on('error', (err) => {
                 result = `${getTime()}:启动funtool时发生错误: ${err}<br>` + result;
                 mainWindow.webContents.send('action-result', result);
+                bridgeIsOn = false
+                mainWindow.webContents.send('bridgeIsOn-result', bridgeIsOn);  
             });
         } else {
             result = `${getTime()}:funtool已在运行中...<br>` + result;
@@ -118,6 +126,8 @@ function createWindow() {
         if (funtoolProcess) {
             funtoolProcess.kill();
             funtoolProcess = null;
+            bridgeIsOn = false
+            mainWindow.webContents.send('bridgeIsOn-result', bridgeIsOn);
             result = `${getTime()}:funtool已停止...<br>` + result;
             mainWindow.webContents.send('action-result', result);
         } else {
@@ -126,66 +136,57 @@ function createWindow() {
         }
     });
 
-    ipcMain.on('start-sidecar', () => {
-        const timeutc = getTime();
-
-        if (!sidecarProcess) {
-            const execPath = path.join(__dirname, 'assets', 'wxbot-sidecar.exe');
-            sidecarProcess = spawn(execPath);
-            sidecarProcess.on('spawn', () => {
-                result = `${timeutc}:Sidecar已启动！<br>` + result;
-                mainWindow.webContents.send('action-result', result);
-            });
-            sidecarProcess.on('error', (err) => {
-                result = `${timeutc}:启动Sidecar时发生错误: ${err}<br>` + result;
-                mainWindow.webContents.send('action-result', result);
-            });
-        } else {
-            result = `${timeutc}:Sidecar已在运行中...<br>` + result;
-            mainWindow.webContents.send('action-result', result);
-        }
-    });
-
-    ipcMain.on('stop-sidecar', () => {
-        const timeutc = getTime();
-        if (sidecarProcess) {
-            sidecarProcess.kill();
-            sidecarProcess = null;
-            result = `${timeutc}:Sidecar已停止...<br>` + result;
-            mainWindow.webContents.send('action-result', result);
-        } else {
-            result = `${timeutc}:Sidecar未在运行...<br>` + result;
-            mainWindow.webContents.send('action-result', result);
-        }
-    });
-
     ipcMain.on('start-bot', () => {
-        const timeutc = getTime();
 
-        if (!botProcess) {
+        if (!wechatyIsOn) {
+            let puppet = ''
+            if(wechatVersion === '3.9.2.1000'){
+                puppet = new PuppetBridge({
+                    nickName: '大师'  // 登录微信的昵称
+                })
+            } else if(wechatVersion === '3.9.8.1000'){
+                puppet = new PuppetBridgeJwpingWxbot({
+                    nickName: '大师'  // 登录微信的昵称
+                })
+            } else {
+                result = `${getTime()}:不支持当前版本！<br>` + result;
+                mainWindow.webContents.send('action-result', result);
+            }
+            bot = WechatyBuilder.build({
+                name: 'ding-dong-bot',
+                puppet,
+            })
+            
+            bot.on('login', onLogin)
+            bot.on('message', onMessage)
+
             bot.start()
                 .then(() => {
-                    botProcess = true;
-                    result = `${timeutc}:Bot已启动！<br>` + result;
+                    wechatyIsOn = true;
+                    mainWindow.webContents.send('wechatyIsOn-result', wechatyIsOn);
+                    result = `${getTime()}:Bot已启动！<br>` + result;
                     mainWindow.webContents.send('action-result', result);
                     return log.info('StarterBot', 'Starter Bot Started.')
                 })
                 .catch((err) => {
                     console.error('bot start error', err)
-                    result = `${timeutc}:启动Bot时发生错误...${err}<br>` + result;
+                    wechatyIsOn = false;
+                    mainWindow.webContents.send('wechatyIsOn-result', wechatyIsOn);
+                    result = `${getTime()}:启动Bot时发生错误...${err}<br>` + result;
                     mainWindow.webContents.send('action-result', result);
                 })
         } else {
-            result = `${timeutc}:Bot已在运行中...<br>` + result;
+            result = `${getTime()}:Bot已在运行中...<br>` + result;
             mainWindow.webContents.send('action-result', result);
         }
     });
 
     ipcMain.on('stop-bot', () => {
         const timeutc = new Date().toLocaleString();
-        if (botProcess) {
+        if (wechatyIsOn) {
             bot.stop().then(() => {
-                botProcess = null;
+                wechatyIsOn = false;
+                mainWindow.webContents.send('wechatyIsOn-result', wechatyIsOn);
                 result = `${timeutc}:bot已停止...<br>` + result;
                 mainWindow.webContents.send('action-result', result);
             }).catch((err) => {
@@ -301,23 +302,23 @@ function createWindow() {
         }
     })
 
-    bot.start()
-        .then(() => {
-            console.log('bot start success')
-            const timeutc = new Date().toLocaleString();
+    // bot.start()
+    //     .then(() => {
+    //         console.log('bot start success')
+    //         const timeutc = new Date().toLocaleString();
 
-            botProcess = true;
-            result = `${timeutc}:Bot已启动！<br>` + result;
-            mainWindow.webContents.send('action-result', result);
-            return log.info('StarterBot', 'Starter Bot Started.')
-        })
-        .catch((err) => {
-            const timeutc = new Date().toLocaleString();
+    //         botProcess = true;
+    //         result = `${timeutc}:Bot已启动！<br>` + result;
+    //         mainWindow.webContents.send('action-result', result);
+    //         return log.info('StarterBot', 'Starter Bot Started.')
+    //     })
+    //     .catch((err) => {
+    //         const timeutc = new Date().toLocaleString();
 
-            console.error('bot start error', err)
-            result = `${timeutc}:启动Bot时发生错误...${err}<br>` + result;
-            mainWindow.webContents.send('action-result', result);
-        })
+    //         console.error('bot start error', err)
+    //         result = `${timeutc}:启动Bot时发生错误...${err}<br>` + result;
+    //         mainWindow.webContents.send('action-result', result);
+    //     })
 }
 
 async function exportContactsToExcel() {
@@ -377,10 +378,13 @@ function checkWeChat() {
                 }
 
                 resultVersion = `本机安装的客户端版本: ${stdout.trim()}`;
+                wechatVersion = stdout.trim();
                 console.log(resultVersion);
+                result = `${getTime()}:${resultVersion}<br>` + result;
+                mainWindow.webContents.send('action-result', result);
                 try {
                     mainWindow.webContents.send('wechat-check-result', resultVersion);
-                    console.log('send wechat-version');
+                    // console.log('send wechat-version');
                 } catch (e) {
                     console.error(e);
                 }
