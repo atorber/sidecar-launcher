@@ -44,3 +44,28 @@ cnpm install electron-packager --save-dev
 ```
 
 3. 调试运行 npm run start
+
+## 常见问题解决
+
+### 控制台打印乱码
+
+在程序启动前运行以下命令
+
+```shell
+$OutputEncoding = [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+```
+
+### 安装electron失败
+
+使用npm无法安装成功时尝试使用cnpm安装
+
+```shell
+npm install -g cnpm --registry=https://registry.npmmirror.com
+cnpm i
+```
+
+## 更新日志
+
+v0.4.0
+
+- 支持3.9.10.19版本

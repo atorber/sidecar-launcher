@@ -1,24 +1,38 @@
 {
   "name": "sidecar-launcher",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "electron .",
     "start": "electron .",
-    "package": "electron-packager . --overwrite"
+    "package": "electron-packager . --overwrite",
+    "rebuild": "electron-rebuild -f -w frida",
+    "set-ec":"$OutputEncoding = [Console]::OutputEncoding = [System.Text.Encoding]::UTF8"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@atorber/chatflow": "^3.0.22",
+    "aedes": "^0.51.0",
+    "axios": "^1.6.7",
     "file-box": "^1.5.5",
+    "qrcode-terminal": "^0.12.0",
+    "websocket-stream": "^5.5.2",
+    "wechat-remote": "^0.1.0",
     "wechaty": "^1.20.2",
-    "wechaty-puppet-bridge": "^0.4.0",
+    "wechaty-puppet-bridge": "^0.14.0",
+    "wechaty-puppet-padlocal": "^1.11.13",
+    "wechaty-puppet-service": "^1.19.8",
+    "wechaty-puppet-wechat4u": "^1.14.14",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@electron/rebuild": "^3.6.0",
     "electron": "^28.2.0",
-    "electron-packager": "^17.1.2"
+    "electron-packager": "^17.1.2",
+    "node-abi": "^3.56.0"
   }
 }

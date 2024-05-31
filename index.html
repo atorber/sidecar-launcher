@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>微信机器人启动器</title>
+    <title>WeChat Copilot</title>
     <style>
         body {
             margin: 0;
@@ -48,7 +48,7 @@
         #log {
             width: calc(100% - 40px);
             max-width: calc(100% - 40px);
-            height: calc(100vh - 120px);
+            height: calc(100vh - 200px);
             background-color: black;
             color: white;
             padding: 20px;
@@ -60,17 +60,174 @@
             word-wrap: break-word;
             word-break: break-all;
         }
+
+        #send-message {
+            display: flex;
+            width: calc(100% - 40px);
+            max-width: calc(100% - 40px);
+            justify-content: center;
+        }
+
+        #chatInput {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            flex-grow: 1;
+            margin-right: 10px;
+            width: 85%;
+        }
+
+        #sendChatButton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: 1px solid #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 15%;
+        }
+
+        #sendChatButton:hover {
+            background-color: #45a049;
+        }
+
+        #settingsModal {
+            padding-top: 10%;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #settingsModalContent {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        #settingsModalContent label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #settingsModalContent input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #saveSettingsButton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #saveSettingsButton:hover {
+            background-color: #45a049;
+        }
+
+        #settingsModalContent button {
+            margin: 0px 10px;
+        }
+
+        #settingsModalContent div:last-child {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* 美化复选框容器 */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        /* 隐藏默认复选框样式 */
+        .styled-checkbox {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* 自定义复选框样式 */
+        .styled-checkbox+label {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 20px;
+            user-select: none;
+        }
+
+        /* 自定义复选框的方框 */
+        .styled-checkbox+label:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ccc;
+            border-radius: 3px;
+            background-color: #fff;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        /* 复选框选中时的样式 */
+        .styled-checkbox:checked+label:before {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        /* 复选框选中时的对勾 */
+        .styled-checkbox:checked+label:after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
     </style>
 </head>
 
 <body>
     <div class="sidebar">
-        <h2>机器人启动器</h2>
-        <button id="restartButton">重启程序</button>
-        <button id="startButtonFuntool">启动Bridge</button>
-        <button id="stopButtonFuntool">停止Bridge</button>
-        <button id="startButtonBot">启动Wechaty</button>
-        <button id="stopButtonBot">停止Wechaty</button>
+        <h2>微信智能助手</h2>
+        <div id="qrcode-result">
+        </div>
+        <button id="startButtonFuntool" hidden>启动Bridge</button>
+        <button id="stopButtonFuntool" hidden>停止Bridge</button>
+        <!-- MQTT启动勾选 -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="mqttCheckbox" class="styled-checkbox">
+            <label for="mqttCheckbox">启用MQTT推送</label>
+        </div>
+        <button id="startButtonBot">启动</button>
+        <button id="stopButtonBot">停止</button>
         <!-- <button id="downloadTemplateButton">下载Excel模板</button> -->
         <button id="exportButton">同步联系人</button>
         <button id="downloadTemplateButton">下载模板</button>
@@ -79,20 +236,81 @@
         </p>
         <button id="uploadButton">上传任务</button>
         <button id="sendButton">立即群发</button>
+        <button id="settingsButton">设置</button>
+        <button id="restartButton">重启程序</button>
 
     </div>
     <div class="main-content">
-        <p class="status-indicator">支持客户端：3.9.2.23、3.9.8.25 <text style="color: black;font-weight: 200;" selectable="false"
-                space="false" decode="false">=></text>
+        <p class="status-indicator">支持客户端：3.9.2.23/3.9.5.81/3.9.8.25/3.9.10.19 <text
+                style="color: black;font-weight: 200;" selectable="false" space="false" decode="false">=></text>
             <text id="wechat-version" style="color:cadetblue;"></text>
         </p>
         <pre id="log">载入中...</pre>
+        <div id="send-message">
+            <input type="text" id="chatInput" placeholder="输入消息..." style="flex-grow: 1;" />
+            <button id="sendChatButton">发送</button>
+        </div>
+    </div>
+
+    <div id="settingsModal" style="display: none;">
+        <div id="settingsModalContent">
+            <div>
+                <label>
+                    <text class="" style="width: 200px;" selectable="false" space="false" decode="false">
+                        地址：
+                    </text>
+                    <input type="text" id="endpointInput" placeholder="输入接入点地址" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <text class="" style="width: 200px;" selectable="false" space="false" decode="false">
+                        密钥：
+                        <input type="text" id="keyInput" placeholder="输入api key" />
+                </label>
+            </div>
+            <!-- <div>
+                <label>
+                    <text class="" style="width: 200px;" selectable="false" space="false" decode="false">
+                        接入点：
+                        <input type="text" id="endpoint" placeholder="输入MQTT接入点地址" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <text class="" style="width: 200px;" selectable="false" space="false" decode="false">
+                        端口号：
+                        <input type="text" id="port" placeholder="输入MQTT端口" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <text class="" style="width: 200px;" selectable="false" space="false" decode="false">
+                        用户名：
+                        <input type="text" id="username" placeholder="输入MQTT用户名" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    <text class="" style="width: 300px;" selectable="false" space="false" decode="false">
+                        密码：
+                    </text>
+                    <input type="text" id="username" placeholder="输入MQTT密码" />
+                </label>
+            </div> -->
+            <div>
+                <button id="closeSettingsButton">取消</button>
+                <button id="saveSettingsButton">保存</button>
+            </div>
+        </div>
     </div>
 
     <script>
         const { ipcRenderer } = require('electron');
         let bridgeIsOn = false;
         let wechatyIsOn = false;
+        let mqttIsOn = false;
+        let config = {};
         document.getElementById('startButtonFuntool').addEventListener('click', () => {
             ipcRenderer.send('start-funtool');
         });
@@ -135,9 +353,64 @@
             ipcRenderer.send('send-message');
         });
 
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('sendChatButton').click();
+                e.preventDefault(); // 阻止默认行为，例如表单提交
+            }
+        });
+
+        document.getElementById('sendChatButton').addEventListener('click', () => {
+            const chatInput = document.getElementById('chatInput');
+            ipcRenderer.send('chat-message', chatInput.value);
+            chatInput.value = ''; // 清空输入框
+        });
+
+        document.getElementById('settingsButton').addEventListener('click', () => {
+            document.getElementById('settingsModal').style.display = 'block';
+            document.getElementById('endpointInput').value = config.openai.endpoint || '';
+            document.getElementById('keyInput').value = config.openai.key || '';
+        });
+
+        document.getElementById('closeSettingsButton').addEventListener('click', () => {
+            const endpoint = document.getElementById('endpointInput').value;
+            const key = document.getElementById('keyInput').value;
+            document.getElementById('settingsModal').style.display = 'none';
+        });
+
+        document.getElementById('saveSettingsButton').addEventListener('click', () => {
+            const endpoint = document.getElementById('endpointInput').value;
+            const key = document.getElementById('keyInput').value;
+            // 如果有值，保存到配置文件
+            if (endpoint && key) {
+                ipcRenderer.send('save-settings', { endpoint, key });
+                config.openai.endpoint = endpoint;
+                config.openai.key = key;
+                document.getElementById('settingsModal').style.display = 'none';
+            } else {
+                // 否则，提示用户输入完整的地址和密钥，不保存，不关闭模态框，提示不使用alert
+                alert('地址和密钥为必填');
+
+            }
+        });
+        // 处理 MQTT 复选框的状态变化
+        document.getElementById('mqttCheckbox').addEventListener('change', (event) => {
+            mqttIsOn = event.target.checked;
+            ipcRenderer.send('mqtt-status-changed', mqttIsOn);
+        });
         ipcRenderer.on('action-result', (event, result) => {
             const resultDiv = document.getElementById('log');
             resultDiv.innerHTML = result; // 显示执行结果
+        });
+
+        // 还原chat输入框内容
+        ipcRenderer.on('chat-message-result', (event, result) => {
+            const chatInput = document.getElementById('chatInput');
+            chatInput.value = result;
+        });
+
+        ipcRenderer.on('config', (event, result) => {
+            config = result;
         });
 
         ipcRenderer.on('wechat-check-result', (event, result) => {
@@ -193,6 +466,14 @@
                 startButtonFuntool.disabled = false;
                 stopButtonFuntool.disabled = true;
             }
+        });
+
+        ipcRenderer.on('qrcode-result', (event, result) => {
+            console.log('qrcode-result', result);
+            const resultDiv = document.getElementById('qrcode-result');
+            // 设置resultDiv的src属性
+            resultDiv.innerHTML = `<image class="" src="${result}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />`
+
         });
 
     </script>
