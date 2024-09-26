@@ -1,6 +1,6 @@
 {
   "name": "sidecar-launcher",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "start": "electron .",
     "package": "electron-packager . --overwrite",
     "rebuild": "electron-rebuild -f -w frida",
+    "package:python":"python -m PyInstaller --onefile --windowed main.py",
     "set-ec":"$OutputEncoding = [Console]::OutputEncoding = [System.Text.Encoding]::UTF8"
   },
   "keywords": [],

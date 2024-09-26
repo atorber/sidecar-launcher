@@ -15,3 +15,8 @@ logs/wxbot.log
 assets/contacts.xlsx
 logs/wxbot.log
 assets/qrcode.png
+*.zip
+*.log
+build/*
+main.spec
+assets/config.json
